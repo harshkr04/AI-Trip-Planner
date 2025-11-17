@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+httpx
+python-dotenv
+langchain
+openai  # or another LLM provider if preferred
+sqlmodel   # or sqlalchemy if you need a full ORM
+fpdf       # for PDF generation
+requests
+pytest     # for testing
+# Optional and highly recommended if using vector DBs/RAG
+chromadb   # for embeddings/vector search
