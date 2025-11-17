@@ -1,0 +1,322 @@
+/* Sidebar.css - updated for flex column, scroll-snap, tighter spacing, and dividers */
+
+:root{
+  --bg:#f5f7fa;
+  --panel:#ffffff;
+  --panel-2:#f9fafb;
+  --text:#1a202c;
+  --muted:#718096;
+  --accent:#6366f1;
+  --border:#e6e8ef;
+  --divider:#e6edf3;
+  --shadow: rgba(0,0,0,0.06);
+}
+
+/* root container (use full height) */
+.sidebar-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  width: 308px;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+/* internal column that ensures footer pinned to bottom with margin-top:auto */
+.sidebar-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 8px;
+}
+
+/* top */
+.sidebar-top { padding-top: 6px; }
+
+/* New chat button */
+.btn-new {
+  width: 100%;
+  padding: 10px 12px;
+  background: linear-gradient(90deg,#7c3aed,#6d28d9);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(99,102,241,0.06);
+  font-size: 14px;
+}
+
+/* the middle group scrolls (history + nav inside) */
+.sidebar-middle {
+  flex: 1 1 auto;
+  overflow: hidden; /* hide extra, inner containers control scrolling separately */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+/* section wrapper */
+.sidebar-section { padding-bottom: 6px; }
+
+/* small heading */
+.sidebar-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* ===== History area: scrollable and snap-enabled ===== */
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;            /* important: snap */
+  max-height: calc(50vh);                   /* ensures end near middle */
+  padding-right: 6px;
+}
+
+/* hide webkit scrollbar but keep scroll available */
+.history::-webkit-scrollbar { width: 0; height: 0; display: none; }
+.history { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* compact list item with scroll-snap align center */
+.item {
+  scroll-snap-align: center;
+  scroll-margin-block: 12px;
+}
+
+/* Chat row: tighter spacing, compact */
+.chat-row {
+  position: relative;
+  padding: 8px 56px 8px 8px; /* room for circular icon at right */
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(15,23,42,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  line-height: 1.15;
+  transition: transform .08s ease, box-shadow .08s ease;
+  overflow: visible;
+}
+
+.chat-row:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(2,6,23,0.04); }
+
+/* title/subtitle */
+.chat-title { font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chat-sub { font-size: 11px; color: var(--muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* circular small delete icon */
+.chat-delete {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(17,24,39,0.04);
+  color: #374151;
+  border: 1px solid rgba(15,23,42,0.04);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(2,6,23,0.03);
+  transition: opacity .12s ease, transform .12s ease, background .12s ease, color .12s ease;
+  z-index: 30;
+}
+
+/* reveal on hover or keyboard focus */
+.chat-row:hover .chat-delete,
+.chat-row:focus-within .chat-delete {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* hover/focus states on icon */
+.chat-delete:hover,
+.chat-delete:focus {
+  background: rgba(239,68,68,0.10);
+  color: #ef4444;
+  transform: translateY(-50%) scale(1.02);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.10);
+}
+.chat-delete:focus-visible { outline: 3px solid rgba(99,102,241,0.14); outline-offset: 3px; }
+
+/* nav area with visual dividers */
+.nav-list { display:flex; flex-direction:column; gap:6px; padding-top: 6px; }
+
+/* nav link */
+.nav-link {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 10px;
+  border-radius:8px;
+  text-decoration:none;
+  background:#fff;
+  border:1px solid #eef3f7;
+  color:var(--text);
+  font-weight:600;
+  font-size:13px;
+  transition: all .12s ease;
+}
+.nav-link .nav-ico { width:22px; text-align:center; }
+.nav-link:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(2,6,23,0.04); }
+.nav-link.active { border-color: #e8ddff; background: linear-gradient(180deg,#fff,#fbf7ff); box-shadow: 0 8px 20px rgba(99,102,241,0.05); }
+
+/* dividers */
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--divider);
+  margin: 8px 0;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+}
+.sub-divider {
+  border: none;
+  height: 1px;
+  background: #f1f5f9;
+  margin: 6px 0;
+}
+
+/* footer pinned */
+.sidebar-footer {
+  margin-top: auto; /* pushes footer to bottom */
+  padding-top: 8px;
+  border-top: 1px solid rgba(15,23,42,0.02);
+}
+
+/* small empty */
+.empty { font-size:13px; color:var(--muted); padding:8px; border-radius:6px; }
+
+/* Modal styles (ConfirmModal uses these) */
+.modal-overlay {
+  position: fixed; inset: 0; display:flex; align-items:center; justify-content:center;
+  background: rgba(2,6,23,0.4); z-index: 3000;
+}
+.modal-card {
+  width: 420px; max-width: calc(100% - 32px); background:#fff; border-radius:12px; padding:18px;
+  box-shadow: 0 30px 80px rgba(2,6,23,0.25);
+}
+/* --- Sidebar root + layout fixes to prevent footer clipping --- */
+
+:root{
+  --bg:#f5f7fa;
+  --panel:#ffffff;
+  --panel-2:#f9fafb;
+  --text:#1a202c;
+  --muted:#718096;
+  --accent:#6366f1;
+  --border:#e6e8f0;
+  --divider:#e6edf3;
+  --shadow: rgba(0,0,0,0.06);
+}
+
+/* sidebar container — allow safe-area and extra bottom padding so footer isn't clipped */
+.sidebar-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  width: 308px;
+  box-sizing: border-box;
+
+  /* add comfortable top + side + bottom padding (bottom includes safe-area inset fallback) */
+  padding: 12px 12px calc(20px + env(safe-area-inset-bottom, 12px)) 12px;
+}
+
+/* the inner column: keeps footer pinned using margin-top:auto but we also pin footer sticky */
+.sidebar-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+/* middle scrollable group — reserve space at bottom equal to footer height so content doesn't scroll under it */
+.sidebar-middle {
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+
+  /* reserve room at bottom for footer so the last chat doesn't get hidden */
+  padding-bottom: calc(72px + env(safe-area-inset-bottom, 12px));
+}
+
+/* footer pinned and visually separated, sticky near the bottom */
+.sidebar-footer {
+  /* Keep at bottom of the sidebar */
+  margin-top: auto;
+  padding: 10px;
+  /* ensure it floats above the page edge if sidebar scrolled */
+  position: sticky;
+  bottom: calc(12px + env(safe-area-inset-bottom, 6px));
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,250,0.95));
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(2,6,23,0.06);
+  border: 1px solid rgba(15,23,42,0.03);
+  z-index: 40;
+}
+
+/* small adjustment so the profile menu button itself fits */
+.sidebar-footer .pm-root,
+.sidebar-footer .pm-button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ensure footer contents (avatar row) are not clipped and have some breathing room */
+.sidebar-footer .pm-button {
+  padding: 8px 10px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #eef3f7;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* small visual tweak: increase separation between main scroll area and footer on very short screens */
+@media (max-height: 640px) {
+  .sidebar-middle { padding-bottom: calc(88px + env(safe-area-inset-bottom, 12px)); }
+  .sidebar-footer { bottom: calc(8px + env(safe-area-inset-bottom, 6px)); padding: 8px; }
+}
+
+/* Optional: ensure scrollbars can't overlap the footer on Windows chrome scrollbars */
+.history { padding-right: 8px; }
+
+/* keep other existing sidebar styles as-is below this block... */
+
+.modal-title{font-size:18px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.modal-body{color:var(--muted);margin-bottom:12px;}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end;}
+.modal-btn{padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700;}
+.modal-cancel{background:#f3f6f9;color:var(--text);}
+.modal-confirm{background:#ef4444;color:#fff;}
+
+/* responsiveness */
+@media (max-width: 900px) {
+  .sidebar-root{ width:260px; }
+  .chat-delete{ width:32px; height:32px; right:8px; }
+  .history{ max-height: 46vh; }
+}
+
+/* ensure smooth page scroll */
+html{ scroll-behavior: smooth; }
