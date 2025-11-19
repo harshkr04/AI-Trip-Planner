@@ -26,7 +26,8 @@ export default function NewsPage() {
 
   useEffect(() => {
     loadNews(query);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run on mount with default query
 
   return (
     <div>
@@ -41,7 +42,15 @@ export default function NewsPage() {
 
       <Section title="Latest Articles" defaultOpen={true}>
         {error && <div className="empty">{error}</div>}
-        {articles.length === 0 ? <div className="empty">No articles found.</div> : (
+        {loading && articles.length === 0 ? (
+          <div className="skeleton-list">
+            {[1, 2, 3, 4].map(i => (
+              <div key={i} className="skeleton-row" />
+            ))}
+          </div>
+        ) : articles.length === 0 ? (
+          <div className="empty">No articles found.</div>
+        ) : (
           <div className="list">
             {articles.map((a, idx) => (
               <div key={idx} className="list-row" style={{ alignItems: "flex-start" }}>

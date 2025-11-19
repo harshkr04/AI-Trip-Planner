@@ -6,8 +6,7 @@ import React, { useState } from "react";
  * Larger, centered modal for Sign in / Sign up.
  * Still uses demo localStorage auth for now.
  */
-
-export default function AuthModal({ onClose }) {
+export default function AuthModal({ onClose, onGmailLogin }) {
   const [mode, setMode] = useState("login");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -34,168 +33,89 @@ export default function AuthModal({ onClose }) {
   };
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        background: "rgba(15,23,42,0.6)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: 9999,
-        backdropFilter: "blur(2px)",
-      }}
-    >
-      <div
-        style={{
-          width: "480px", // Increased width
-          background: "#fff",
-          borderRadius: "16px",
-          padding: "32px 28px",
-          boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-          animation: "fadeIn 0.2s ease",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: 20,
-          }}
-        >
-          <h2 style={{ margin: 0, fontWeight: 700, fontSize: "20px" }}>
-            {mode === "signup" ? "Create account" : "Sign in"}
-          </h2>
-          <button
-            onClick={() => close(null)}
-            style={{
-              border: "none",
-              background: "transparent",
-              fontSize: "18px",
-              cursor: "pointer",
-              color: "#475569",
-            }}
-            title="Close"
-          >
+    <div className="auth-overlay">
+      <div className="auth-card">
+        <div className="auth-head">
+          <h2 className="auth-title">{mode === "signup" ? "Create account" : "Sign in"}</h2>
+          <button className="auth-close" onClick={() => close(null)} aria-label="Close auth modal">
             ✕
           </button>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          {mode === "signup" && (
-            <div>
-              <label
-                style={{
-                  display: "block",
-                  fontSize: 13,
-                  color: "#475569",
-                  marginBottom: 4,
-                }}
-              >
-                Full name
-              </label>
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Your name"
-                style={{
-                  width: "100%",
-                  padding: "10px 12px",
-                  borderRadius: 10,
-                  border: "1px solid #e2e8f0",
-                  fontSize: 14,
-                }}
-              />
-            </div>
-          )}
-
-          <div>
-            <label
-              style={{
-                display: "block",
-                fontSize: 13,
-                color: "#475569",
-                marginBottom: 4,
-              }}
-            >
-              Email
-            </label>
+        {mode === "signup" && (
+          <div className="auth-field">
+            <label>Full name</label>
             <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com"
-              style={{
-                width: "100%",
-                padding: "10px 12px",
-                borderRadius: 10,
-                border: "1px solid #e2e8f0",
-                fontSize: 14,
-              }}
+              className="auth-input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
             />
           </div>
+        )}
 
-          <div>
-            <label
-              style={{
-                display: "block",
-                fontSize: 13,
-                color: "#475569",
-                marginBottom: 4,
-              }}
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="password"
-              style={{
-                width: "100%",
-                padding: "10px 12px",
-                borderRadius: 10,
-                border: "1px solid #e2e8f0",
-                fontSize: 14,
-              }}
-            />
-          </div>
+        <div className="auth-field">
+          <label>Email</label>
+          <input
+            className="auth-input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.com"
+          />
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            gap: 10,
-            marginTop: 24,
-          }}
-        >
-          <button
-            onClick={submit}
-            style={{
-              flex: 1,
-              padding: "12px 16px",
-              borderRadius: 10,
-              background: "linear-gradient(90deg,#6b46c1,#7c3aed)",
-              color: "white",
-              fontWeight: 600,
-              fontSize: 15,
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
+        <div className="auth-field">
+          <label>Password</label>
+          <input
+            className="auth-input"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="password"
+          />
+        </div>
+
+        {onGmailLogin && (
+          <div style={{ marginTop: 16, marginBottom: 8 }}>
+            <div style={{ textAlign: "center", fontSize: 13, color: "var(--muted)", marginBottom: 12 }}>or</div>
+            <button
+              className="auth-gmail"
+              onClick={onGmailLogin}
+              style={{
+                width: "100%",
+                height: "48px",
+                borderRadius: "14px",
+                border: "1px solid rgba(23, 35, 57, 0.12)",
+                background: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "10px",
+                cursor: "pointer",
+                fontWeight: 600,
+                fontSize: 15,
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = "#f8f9fa";
+                e.target.style.borderColor = "var(--accent)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = "#fff";
+                e.target.style.borderColor = "rgba(23, 35, 57, 0.12)";
+              }}
+            >
+              <span>📧</span>
+              <span>Continue with Gmail</span>
+            </button>
+          </div>
+        )}
+
+        <div className="auth-actions">
+          <button className="auth-primary" onClick={submit}>
             {mode === "signup" ? "Create account" : "Sign in"}
           </button>
-          <button
-            onClick={() => setMode(mode === "signup" ? "login" : "signup")}
-            style={{
-              padding: "12px 16px",
-              borderRadius: 10,
-              background: "#f1f5f9",
-              border: "1px solid #e6eef8",
-              cursor: "pointer",
-              fontWeight: 500,
-            }}
-          >
+          <button className="auth-secondary" onClick={() => setMode(mode === "signup" ? "login" : "signup")}>
             {mode === "signup" ? "Have an account?" : "Create account"}
           </button>
         </div>

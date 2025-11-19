@@ -1,6 +1,7 @@
 // frontend/src/components/ProfileMenu.jsx
 import React, { useState, useEffect, useRef } from "react";
 import AuthModal from "./AuthModal";
+import { useTheme } from "../contexts/ThemeContext";
 
 /**
  * ProfileMenu — clean profile dropdown.
@@ -13,6 +14,7 @@ export default function ProfileMenu() {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [showAuth, setShowAuth] = useState(false);
+  const { darkMode, toggleDarkMode } = useTheme();
   const ref = useRef();
 
   useEffect(() => {
@@ -54,9 +56,22 @@ export default function ProfileMenu() {
     alert("Signed out");
   };
 
+  const handleGmailLogin = () => {
+    // Demo Gmail login - in production, use OAuth
+    const demoGmailUser = {
+      name: "Gmail User",
+      email: "user@gmail.com",
+      provider: "gmail"
+    };
+    localStorage.setItem("ai_user", JSON.stringify(demoGmailUser));
+    setUser(demoGmailUser);
+    setShowAuth(false);
+    setOpen(false);
+    alert("Signed in with Gmail (demo)");
+  };
+
   return (
     <div className="profile-menu" ref={ref} style={{ position: "relative" }}>
-      {/* --- User / Guest Card --- */}
       <button
         onClick={() => (user ? setOpen((v) => !v) : openAuth())}
         style={{
@@ -70,6 +85,7 @@ export default function ProfileMenu() {
           padding: "10px 12px",
           cursor: "pointer",
           transition: "0.2s",
+          boxShadow: "0 2px 8px rgba(15, 30, 60, 0.08)",
         }}
       >
         <div
@@ -101,7 +117,6 @@ export default function ProfileMenu() {
         {user && <div style={{ color: "#9ca3af" }}>▾</div>}
       </button>
 
-      {/* --- Dropdown Menu --- */}
       {open && user && (
         <div
           className="pm-menu"
@@ -164,7 +179,31 @@ export default function ProfileMenu() {
             </div>
           </div>
 
-          <div style={{ padding: 8 }}>
+          <div style={{ padding: 8, display: "flex", flexDirection: "column", gap: 8 }}>
+            <button
+              onClick={toggleDarkMode}
+              style={{
+                width: "100%",
+                padding: "10px 12px",
+                borderRadius: 8,
+                background: "#fff",
+                border: "1px solid #e5e7eb",
+                cursor: "pointer",
+                fontWeight: 500,
+                fontSize: 14,
+                color: "#374151",
+                textAlign: "left",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={(e) => (e.target.style.background = "#f3f4f6")}
+              onMouseLeave={(e) => (e.target.style.background = "#fff")}
+            >
+              <span>Dark Mode</span>
+              <span style={{ fontSize: 18 }}>{darkMode ? "🌙" : "☀️"}</span>
+            </button>
             <button
               onClick={signOut}
               style={{
@@ -172,7 +211,7 @@ export default function ProfileMenu() {
                 padding: "10px 12px",
                 borderRadius: 8,
                 background: "#fff",
-                border: "none",
+                border: "1px solid #e5e7eb",
                 cursor: "pointer",
                 fontWeight: 500,
                 fontSize: 14,
@@ -189,8 +228,7 @@ export default function ProfileMenu() {
         </div>
       )}
 
-      {/* --- Auth Modal --- */}
-      {showAuth && <AuthModal onClose={handleAuthClose} />}
+      {showAuth && <AuthModal onClose={handleAuthClose} onGmailLogin={handleGmailLogin} />}
     </div>
   );
 }

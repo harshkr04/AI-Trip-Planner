@@ -1,4 +1,7 @@
 # backend/services/planner_service.py
+from copy import deepcopy
+from datetime import datetime
+
 from .weather_service import get_weather_for_trip
 from .flight_service import get_flight_options
 from .hotel_service import get_hotel_options
@@ -26,6 +29,29 @@ def _extract_destination_from_prompt(prompt: str):
                 return clean
     return "Mumbai"
 
+def _apply_keyword_overrides(day, keyword):
+    keyword = keyword.lower()
+    if keyword == "adventure":
+        day["highlights"] = "Dialled-up adventure day with guided thrills."
+        for seg in day.get("segments", []):
+            if seg["period"].lower() == "afternoon":
+                seg["activity"] = "Guided canyon trek + cliff viewpoints with certified expert."
+            if seg["period"].lower() == "evening":
+                seg["activity"] = "Campfire storytelling with local guides."
+        day["notes"].append("Adventure upgrade applied — carry sports shoes & hydration pack.")
+    elif keyword == "budget":
+        day["budget_tip"] = "Switch to boutique homestays (₹2-3k) and shared cabs to cut costs."
+        day["notes"].append("Saved approx ₹1500 by using budget dining & metro cards.")
+    elif keyword == "nightlife":
+        for seg in day.get("segments", []):
+            if seg["period"].lower() == "evening":
+                seg["activity"] = "Nightlife crawl — craft cocktail bar + live indie gig."
+        day["notes"].append("Added nightlife focus; arrange return cab in advance.")
+    elif keyword == "relax":
+        if day["segments"]:
+            day["segments"][0]["activity"] = "Slow brunch + spa ritual / steam session."
+        day["notes"].append("Reset the pace with restorative wellness slots.")
+
 def generate_full_plan(trip: dict):
     destination = trip.get("destination")
     if not destination:
@@ -51,15 +77,84 @@ def generate_full_plan(trip: dict):
         for h in hotels[:3]:
             ctx_lines.append(f"  {h['name']} - {h.get('area', '')}, ₹{h['price_per_night']}/night, {h['rating']}★")
     context = "\n".join(ctx_lines)
-    itinerary_text = llm_service.generate_itinerary(
+    itinerary_payload = llm_service.generate_itinerary(
         prompt=trip.get("prompt", ""),
         start_date=trip.get("start_date", ""),
         end_date=trip.get("end_date", ""),
-        context=context
+        context=context,
+        weather_days=weather.get("days") if weather else None,
     )
+    itinerary_plan = itinerary_payload.get("plan")
     return {
-        "itinerary_text": itinerary_text,
+        "itinerary_text": itinerary_payload.get("text"),
+        "itinerary": itinerary_plan,
         "weather": weather,
         "flights": flights,
         "hotels": hotels
+    }
+
+def refine_plan(itinerary: dict, instruction: str):
+    if not itinerary or not itinerary.get("days"):
+        raise ValueError("Itinerary is missing structured data to refine.")
+    refined = deepcopy(itinerary)
+    instruction_lower = instruction.lower()
+    day_targets = []
+    for day in refined["days"]:
+        token = f"day {day['day']}"
+        if token in instruction_lower:
+            day_targets.append(day)
+    if not day_targets:
+        day_targets = refined["days"]
+
+    applied_tags = []
+    if any(word in instruction_lower for word in ["adventure", "adventurous", "thrill"]):
+        for day in day_targets:
+            _apply_keyword_overrides(day, "adventure")
+        applied_tags.append("adventure")
+    if "budget" in instruction_lower or "cheap" in instruction_lower:
+        for day in day_targets:
+            _apply_keyword_overrides(day, "budget")
+        applied_tags.append("budget")
+    if "nightlife" in instruction_lower or "party" in instruction_lower:
+        for day in day_targets:
+            _apply_keyword_overrides(day, "nightlife")
+        applied_tags.append("nightlife")
+    if "relax" in instruction_lower or "slow" in instruction_lower or "spa" in instruction_lower:
+        for day in day_targets:
+            _apply_keyword_overrides(day, "relax")
+        applied_tags.append("relax")
+    if "hotel" in instruction_lower or "stay" in instruction_lower:
+        for day in day_targets:
+            day["notes"].append("Added boutique hotel suggestion: riverside stay with breakfast.")
+        applied_tags.append("accommodation")
+    if "travel time" in instruction_lower:
+        for day in day_targets:
+            day["travel_time"] = "Optimised route — under 20 mins between stops."
+        applied_tags.append("logistics")
+
+    if not applied_tags:
+        for day in day_targets:
+            day["notes"].append(instruction.strip())
+        applied_tags.append("custom-note")
+
+    refined.setdefault("refinements", []).append({
+        "instruction": instruction,
+        "applied_tags": applied_tags,
+        "timestamp": datetime.utcnow().isoformat() + "Z"
+    })
+
+    new_text = llm_service.render_plan_text(refined)
+    summary = f"Applied refinement ({', '.join(applied_tags)})."
+    changed_days = [
+        {
+            "day": day["day"],
+            "data": day
+        }
+        for day in day_targets
+    ]
+    return {
+        "itinerary": refined,
+        "itinerary_text": new_text,
+        "explanation": summary,
+        "changed_days": changed_days
     }

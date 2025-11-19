@@ -1,17 +1,23 @@
 // Sidebar.jsx
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ProfileMenu from "./ProfileMenu";
 import ConfirmModal from "./ConfirmModal";
+import Toast from "./Toast";
 import "./Sidebar.css";
 
 export default function Sidebar({
   sessions = [],
   onLoadSession = () => {},
   onNewChat = () => {},
+  isMobileOpen = false,
+  onCloseMobile = () => {},
 }) {
   const [remoteSessions, setRemoteSessions] = useState([]);
   const [deletingId, setDeletingId] = useState(null);
+  const [deletedSession, setDeletedSession] = useState(null);
+  const [toast, setToast] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
   const [confirmState, setConfirmState] = useState({
     open: false,
     id: null,
@@ -22,11 +28,11 @@ export default function Sidebar({
 
   const location = useLocation();
   const navigate = useNavigate();
-  const scrollableRef = useRef(null);
 
   useEffect(() => {
     let mounted = true;
-    fetch("/api/sessions/list")
+    const API_BASE = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : '';
+    fetch(`${API_BASE}/api/sessions/`)
       .then((r) => (r.ok ? r.json() : []))
       .then((data) => {
         if (!mounted) return;
@@ -50,6 +56,15 @@ export default function Sidebar({
     return Array.from(map.values()).slice(0, 40);
   }, [sessions, remoteSessions]);
 
+  const filteredSessions = useMemo(() => {
+    if (!searchTerm.trim()) return mergedSessions;
+    const term = searchTerm.toLowerCase();
+    return mergedSessions.filter((s) => {
+      const title = s?.title || s?.prompt || "";
+      return title.toLowerCase().includes(term);
+    });
+  }, [mergedSessions, searchTerm]);
+
   function shortSummary(text) {
     if (!text) return "";
     const words = text.trim().split(/\s+/);
@@ -59,6 +74,7 @@ export default function Sidebar({
   function handleLoadSession(s) {
     onLoadSession(s);
     if (location.pathname !== "/") navigate("/");
+    onCloseMobile();
   }
 
   function onDeleteClick(id, title) {
@@ -74,11 +90,29 @@ export default function Sidebar({
     setConfirmState((s) => ({ ...s, loading: true, error: null }));
     setDeletingId(id);
 
+    // Store the session for potential undo
+    const sessionToDelete = [...remoteSessions, ...sessions].find(s => String(s?.id) === String(id));
+    
     try {
-      const resp = await fetch(`/api/sessions/${encodeURIComponent(id)}`, { method: "DELETE" });
+      const API_BASE = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : '';
+      const resp = await fetch(`${API_BASE}/api/history/${encodeURIComponent(id)}`, { 
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" }
+      });
       if (!resp.ok) {
-        const text = await resp.text().catch(() => "Failed to delete session");
-        throw new Error(text || "Failed to delete session");
+        const text = await resp.text().catch(() => "");
+        let message = "Failed to delete chat";
+        try {
+          const parsed = JSON.parse(text);
+          if (parsed?.detail) {
+            message = parsed.detail;
+          } else if (typeof parsed === "string") {
+            message = parsed;
+          }
+        } catch {
+          if (text) message = text;
+        }
+        throw new Error(message);
       }
 
       setRemoteSessions((rs) => rs.filter((r) => String(r.id) !== String(id)));
@@ -95,6 +129,12 @@ export default function Sidebar({
       }
 
       setConfirmState({ open: false, id: null, title: "", loading: false, error: null });
+      
+      // Show toast with undo
+      if (sessionToDelete) {
+        setDeletedSession(sessionToDelete);
+        setToast({ message: "Chat deleted", onUndo: handleUndoDelete });
+      }
     } catch (err) {
       setConfirmState((s) => ({ ...s, loading: false, error: err.message || "Delete failed" }));
     } finally {
@@ -102,65 +142,102 @@ export default function Sidebar({
     }
   }
 
+  function handleUndoDelete() {
+    if (!deletedSession) return;
+    
+    // Restore to localStorage
+    try {
+      const raw = localStorage.getItem("ai_chat_sessions");
+      const arr = raw ? JSON.parse(raw) : [];
+      if (!arr.find(s => String(s.id) === String(deletedSession.id))) {
+        arr.unshift(deletedSession);
+        localStorage.setItem("ai_chat_sessions", JSON.stringify(arr.slice(0, 20)));
+      }
+    } catch (e) {
+      // ignore
+    }
+    
+    // Restore to remote sessions
+    setRemoteSessions((rs) => {
+      if (!rs.find(s => String(s.id) === String(deletedSession.id))) {
+        return [deletedSession, ...rs];
+      }
+      return rs;
+    });
+    
+    setDeletedSession(null);
+    setToast(null);
+  }
+
+  const sidebarClasses = ["sidebar-root"];
+  if (isMobileOpen) sidebarClasses.push("sidebar-open");
+
   return (
-    <aside className="sidebar-root" aria-label="Sidebar">
+    <aside className={sidebarClasses.join(" ")} aria-label="Sidebar">
       <div className="sidebar-column">
-        {/* top - New Chat */}
         <div className="sidebar-top">
           <button
             className="btn-new"
             onClick={() => {
               onNewChat();
               if (location.pathname !== "/") navigate("/");
+              onCloseMobile();
             }}
           >
             + New Chat
           </button>
+          <div className="sidebar-search">
+            <input
+              type="text"
+              placeholder="Search chats"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              aria-label="Search chats"
+            />
+          </div>
         </div>
 
-        {/* middle scrollable group: chat history + navigation */}
-        <div className="sidebar-middle" ref={scrollableRef}>
-          <div className="sidebar-section">
-            <div className="sidebar-title">Chat History</div>
+        <div className="sidebar-section history-wrap">
+          <div className="sidebar-title">Chat History</div>
 
-            <div className="history"
-                 role="list"
-                 aria-label="Chat history"
-                 tabIndex={0}
-                 /* scroll snap container */
-            >
-              {mergedSessions.length === 0 ? (
-                <div className="empty">No saved chats yet</div>
-              ) : (
-                mergedSessions.map((s) => {
-                  const id = s?.id ?? Math.random().toString(36).slice(2, 9);
-                  return (
-                    <div
-                      key={id}
-                      role="listitem"
-                      className="item chat-row"
-                      tabIndex={0}
-                      onClick={() => handleLoadSession(s)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          handleLoadSession(s);
-                        }
-                      }}
-                    >
-                      <div className="chat-body">
-                        <div className="chat-title">{shortSummary(s.title || s.prompt || "Trip")}</div>
-                        <div className="chat-sub">{s.createdAt ? new Date(s.createdAt).toLocaleString() : (s.created || "")}</div>
-                      </div>
+          <div className="history" role="list" aria-label="Chat history" tabIndex={0}>
+            {filteredSessions.length === 0 ? (
+              <div className="empty">No matching chats.</div>
+            ) : (
+              filteredSessions.map((s) => {
+                const id = s?.id ?? Math.random().toString(36).slice(2, 9);
+                const title = s?.title || s?.prompt || "Trip";
+                return (
+                  <div
+                    key={id}
+                    role="listitem"
+                    className="item chat-row"
+                    tabIndex={0}
+                    onClick={() => handleLoadSession(s)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handleLoadSession(s);
+                      }
+                    }}
+                    title={title}
+                  >
+                    <div className="chat-body" title={title}>
+                      <div className="chat-title">{shortSummary(title)}</div>
+                    </div>
 
+                    <div className="chat-actions">
+                      <span className="chat-view" aria-hidden="true">
+                        View
+                      </span>
                       <button
                         type="button"
                         className="chat-delete"
-                        aria-label={`Delete chat ${s.title ? s.title.slice(0, 40) : ""}`}
+                        aria-label={`Delete chat ${title.slice(0, 40)}`}
                         title="Delete chat"
                         onClick={(e) => {
                           e.stopPropagation();
-                          onDeleteClick(id, s.title || s.prompt || "");
+                          onDeleteClick(id, title);
                         }}
                         disabled={deletingId === id}
                       >
@@ -173,42 +250,50 @@ export default function Sidebar({
                         </svg>
                       </button>
                     </div>
-                  );
-                })
-              )}
-            </div>
-          </div>
-
-          {/* small separator */}
-          <hr className="divider" />
-
-          <div className="sidebar-section">
-            <div className="sidebar-title">Navigation</div>
-
-            <nav className="nav-list" aria-label="Main navigation">
-              <Link to="/flights" className={`nav-link ${location.pathname === "/flights" ? "active" : ""}`}>
-                <span className="nav-ico">✈️</span>
-                <span className="nav-text">Flight Search</span>
-              </Link>
-
-              <hr className="sub-divider" />
-
-              <Link to="/hotels" className={`nav-link ${location.pathname === "/hotels" ? "active" : ""}`}>
-                <span className="nav-ico">🏨</span>
-                <span className="nav-text">Hotels & Cuisines</span>
-              </Link>
-
-              <hr className="sub-divider" />
-
-              <Link to="/news" className={`nav-link ${location.pathname === "/news" ? "active" : ""}`}>
-                <span className="nav-ico">📰</span>
-                <span className="nav-text">Travel News & Blogs</span>
-              </Link>
-            </nav>
+                  </div>
+                );
+              })
+            )}
           </div>
         </div>
 
-        {/* footer - pinned bottom */}
+        <div className="sidebar-section navigation">
+          <div className="sidebar-title">Navigation</div>
+
+          <nav className="nav-list" aria-label="Main navigation">
+            <Link
+              to="/flights"
+              className={`nav-link ${location.pathname === "/flights" ? "active" : ""}`}
+              onClick={onCloseMobile}
+            >
+              <span className="nav-ico">✈️</span>
+              <span className="nav-text">Flight Search</span>
+            </Link>
+
+            <hr className="sub-divider" />
+
+            <Link
+              to="/hotels"
+              className={`nav-link ${location.pathname === "/hotels" ? "active" : ""}`}
+              onClick={onCloseMobile}
+            >
+              <span className="nav-ico">🏨</span>
+              <span className="nav-text">Hotels & Cuisines</span>
+            </Link>
+
+            <hr className="sub-divider" />
+
+            <Link
+              to="/news"
+              className={`nav-link ${location.pathname === "/news" ? "active" : ""}`}
+              onClick={onCloseMobile}
+            >
+              <span className="nav-ico">📰</span>
+              <span className="nav-text">Travel News & Blogs</span>
+            </Link>
+          </nav>
+        </div>
+
         <div className="sidebar-footer">
           <ProfileMenu />
         </div>
@@ -229,6 +314,25 @@ export default function Sidebar({
         onConfirm={handleConfirmDelete}
         onCancel={closeConfirm}
       />
+
+      {toast && (
+        <Toast
+          message={toast.message}
+          onUndo={toast.onUndo}
+          onClose={() => {
+            setToast(null);
+            setDeletedSession(null);
+          }}
+        />
+      )}
+      <button
+        className="sidebar-close"
+        type="button"
+        aria-label="Close sidebar"
+        onClick={onCloseMobile}
+      >
+        ×
+      </button>
     </aside>
   );
 }

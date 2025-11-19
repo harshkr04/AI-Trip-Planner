@@ -63,6 +63,8 @@ routers_to_try = [
     ("backend.routes.flights", "/api/flights", "flights"),
     ("backend.routes.hotels", "/api/hotels", "hotels"),
     ("backend.routes.sessions", "/api/sessions", "sessions"),
+    ("backend.routes.history", "/api/history", "history"),
+    ("backend.routes.location", "/api/location", "location"),
 ]
 
 for mod_name, prefix, tag in routers_to_try:

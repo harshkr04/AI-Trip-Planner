@@ -33,5 +33,13 @@ class Config:
     MAKCORPS_API_KEY: str = os.getenv("MAKCORPS_API_KEY", "")
     MAKCORPS_BASE_URL: str = os.getenv("MAKCORPS_BASE_URL", "https://api.makcorps.com/free")
 
+    # Email / SMTP
+    SMTP_HOST: str = os.getenv("SMTP_HOST", "")
+    SMTP_PORT: int = int(os.getenv("SMTP_PORT", "587"))
+    SMTP_USERNAME: str = os.getenv("SMTP_USERNAME", "")
+    SMTP_PASSWORD: str = os.getenv("SMTP_PASSWORD", "")
+    SMTP_USE_TLS: bool = os.getenv("SMTP_USE_TLS", "true").lower() == "true"
+    EMAIL_SENDER: str = os.getenv("EMAIL_SENDER", os.getenv("SMTP_USERNAME", "no-reply@ai-travel-planner"))
+
 
 config = Config()
