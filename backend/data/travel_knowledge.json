@@ -1,0 +1,82 @@
+[
+    {
+        "id": "tip_001",
+        "category": "General",
+        "content": "In India, always carry small denominations of cash (₹10, ₹20, ₹50, ₹100) for auto-rickshaws and street vendors, as they often don't have change for ₹500 notes.",
+        "tags": [
+            "cash",
+            "money",
+            "tips"
+        ]
+    },
+    {
+        "id": "tip_002",
+        "category": "Safety",
+        "content": "Use prepaid taxi counters at airports and railway stations to avoid being overcharged by touts. Uber and Ola are also reliable in major cities.",
+        "tags": [
+            "transport",
+            "safety",
+            "taxi"
+        ]
+    },
+    {
+        "id": "dest_mum_001",
+        "category": "Destination",
+        "content": "Mumbai: The best time to visit Marine Drive is at sunset. Try the street food at Girgaum Chowpatty, specifically Pav Bhaji and Bhel Puri.",
+        "tags": [
+            "Mumbai",
+            "food",
+            "sightseeing"
+        ]
+    },
+    {
+        "id": "dest_goa_001",
+        "category": "Destination",
+        "content": "Goa: North Goa (Baga, Calangute) is great for nightlife and parties, while South Goa (Palolem, Agonda) is better for a quiet, relaxing beach vacation.",
+        "tags": [
+            "Goa",
+            "beaches",
+            "nightlife"
+        ]
+    },
+    {
+        "id": "dest_jai_001",
+        "category": "Destination",
+        "content": "Jaipur: Visit the Amer Fort early in the morning (around 8 AM) to avoid the crowds and the midday heat. Don't miss the Lassi at Lassiwala on MI Road.",
+        "tags": [
+            "Jaipur",
+            "forts",
+            "food"
+        ]
+    },
+    {
+        "id": "tip_003",
+        "category": "Health",
+        "content": "Drink bottled or filtered water only. Avoid tap water and ice cubes in street drinks to prevent stomach issues.",
+        "tags": [
+            "health",
+            "water",
+            "safety"
+        ]
+    },
+    {
+        "id": "dest_ker_001",
+        "category": "Destination",
+        "content": "Kerala: A houseboat stay in Alleppey is a must-do. Book an overnight stay to experience the backwaters at sunrise and sunset.",
+        "tags": [
+            "Kerala",
+            "houseboat",
+            "backwaters"
+        ]
+    },
+    {
+        "id": "dest_del_001",
+        "category": "Destination",
+        "content": "Delhi: The Lotus Temple is closed on Mondays. Chandni Chowk is best explored on a cycle rickshaw.",
+        "tags": [
+            "Delhi",
+            "sightseeing",
+            "tips"
+        ]
+    }
+]

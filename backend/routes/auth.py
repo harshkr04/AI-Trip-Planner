@@ -11,6 +11,8 @@ from ..config import config
 import urllib.parse
 from passlib.context import CryptContext
 import uuid
+from datetime import datetime, timedelta
+from jose import jwt
 
 router = APIRouter()
 
@@ -82,45 +84,86 @@ def get_google_config():
         "client_id": config.GOOGLE_CLIENT_ID if is_configured else None
     }
 
-@router.post("/register")
+def create_access_token(data: dict, expires_delta: timedelta | None = None):
+    to_encode = data.copy()
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=15)
+    to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, config.JWT_SECRET, algorithm=config.JWT_ALGORITHM)
+    return encoded_jwt
+
+@router.post("/register", status_code=201)
 def register(payload: RegisterRequest, db: Session = Depends(get_db)):
-    # Check if user exists
-    existing_user = db.query(User).filter(User.email == payload.email).first()
-    if existing_user:
-        raise HTTPException(status_code=409, detail="Email already registered")
+    try:
+        # Check if user exists
+        existing_user = db.query(User).filter(User.email == payload.email).first()
+        if existing_user:
+            print(f"[AUTH] Registration failed: Email {payload.email} already exists")
+            raise HTTPException(status_code=409, detail="Email already registered")
 
-    # Create new user
-    hashed_pw = get_password_hash(payload.password)
-    new_user = User(
-        email=payload.email,
-        name=payload.name,
-        hashed_password=hashed_pw,
-        picture="" # Default empty picture
-    )
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
+        # Create new user
+        hashed_pw = get_password_hash(payload.password)
+        new_user = User(
+            email=payload.email,
+            name=payload.name,
+            hashed_password=hashed_pw,
+            picture="" # Default empty picture
+        )
+        db.add(new_user)
+        db.commit()
+        db.refresh(new_user)
+        
+        print(f"[AUTH] Registration successful: {new_user.email} (ID: {new_user.id})")
 
-    return {
-        "user": {
-            "id": new_user.id,
-            "email": new_user.email,
-            "name": new_user.name,
-            "picture": new_user.picture
-        },
-        "token": "session_token_placeholder" # In real app, return JWT
-    }
+        # Generate JWT
+        access_token_expires = timedelta(minutes=config.ACCESS_TOKEN_EXPIRE_MINUTES)
+        access_token = create_access_token(
+            data={"sub": new_user.email, "id": new_user.id},
+            expires_delta=access_token_expires
+        )
+
+        return {
+            "user": {
+                "id": new_user.id,
+                "email": new_user.email,
+                "name": new_user.name,
+                "picture": new_user.picture
+            },
+            "token": access_token
+        }
+    except HTTPException:
+        # Re-raise HTTP exceptions (like 409)
+        raise
+    except Exception as e:
+        print(f"[AUTH] Registration error for {payload.email}: {str(e)}")
+        db.rollback()
+        raise HTTPException(status_code=500, detail="Failed to create account. Please try again.")
 
 @router.post("/login")
 def login(payload: LoginRequest, db: Session = Depends(get_db)):
+    print(f"[AUTH] Login attempt for: {payload.email}")
+    
     user = db.query(User).filter(User.email == payload.email).first()
     if not user or not user.hashed_password:
         # If user exists but has no password (e.g. google auth only), or doesn't exist
+        print(f"[AUTH] Login failed: User not found or no password set for {payload.email}")
         raise HTTPException(status_code=401, detail="Invalid email or password")
     
     if not verify_password(payload.password, user.hashed_password):
+        print(f"[AUTH] Login failed: Invalid password for {payload.email}")
         raise HTTPException(status_code=401, detail="Invalid email or password")
 
+    print(f"[AUTH] Login successful: {user.email} (ID: {user.id})")
+    
+    # Generate JWT
+    access_token_expires = timedelta(minutes=config.ACCESS_TOKEN_EXPIRE_MINUTES)
+    access_token = create_access_token(
+        data={"sub": user.email, "id": user.id},
+        expires_delta=access_token_expires
+    )
+    
     return {
         "user": {
             "id": user.id,
@@ -128,7 +171,7 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
             "name": user.name,
             "picture": user.picture
         },
-        "token": "session_token_placeholder" # In real app, return JWT
+        "token": access_token
     }
 
 # Keeping Google endpoints for potential future re-enablement or legacy support

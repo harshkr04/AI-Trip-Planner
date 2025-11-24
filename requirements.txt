@@ -11,3 +11,9 @@ requests
 pytest     # for testing
 # Optional and highly recommended if using vector DBs/RAG
 chromadb   # for embeddings/vector search
+google-auth
+google-auth-oauthlib
+passlib
+bcrypt
+python-jose[cryptography]
+email-validator

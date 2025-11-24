@@ -11,7 +11,13 @@ import { downloadPdf, sharePdfByEmail } from "../api/pdf";
  * - selectedSession prop (object) -> loads its fields
  * - selectedSession === null         -> clears form for a new chat
  */
-export default function HomePage({ sessions = [], saveSessions = () => {}, selectedSession = null }) {
+export default function HomePage({
+  sessions = [],
+  saveSessions = () => { },
+  selectedSession = null,
+  isDarkMode,
+  toggleTheme
+}) {
   const [prompt, setPrompt] = useState("");
   const [origin, setOrigin] = useState("Delhi");
   const [start, setStart] = useState("");
@@ -76,7 +82,7 @@ export default function HomePage({ sessions = [], saveSessions = () => {}, selec
       if (raw) {
         // no action needed here — we keep sessions via props/saveSessions
       }
-    } catch (e) {}
+    } catch (e) { }
   }, []);
 
   const onSend = async () => {
@@ -195,7 +201,10 @@ export default function HomePage({ sessions = [], saveSessions = () => {}, selec
     setRefineMessages((prev) => [...prev, message]);
     setRefineLoading(true);
     try {
+      console.log("Refining itinerary with:", { itineraryId, instruction });
       const result = await refineItinerary({ itineraryId, instruction });
+      console.log("Refine result:", result);
+
       if (result.itinerary) {
         setItineraryRich(result.itinerary);
       } else if (result.changed_days && result.changed_days.length > 0) {
@@ -218,10 +227,28 @@ export default function HomePage({ sessions = [], saveSessions = () => {}, selec
         setRefineMessages((prev) => [...prev, assistantMsg]);
       }
     } catch (error) {
-      console.error(error);
+      console.error("Refine error details:", {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status,
+        itineraryId,
+        instruction
+      });
+
+      let errorMessage = "Couldn't refine right now. ";
+      if (error.response?.status === 404) {
+        errorMessage += "Itinerary not found. Please generate a new itinerary.";
+      } else if (error.response?.status >= 500) {
+        errorMessage += "Server error. Please try again in a moment.";
+      } else if (error.message?.includes("Network Error") || !error.response) {
+        errorMessage += "Network error. Check your connection and try again.";
+      } else {
+        errorMessage += "Try again shortly or rephrase your request.";
+      }
+
       setRefineMessages((prev) => [
         ...prev,
-        { id: Date.now() + 2, role: "assistant", content: "Couldn't refine right now. Try again shortly." },
+        { id: Date.now() + 2, role: "assistant", content: errorMessage },
       ]);
     } finally {
       setRefineLoading(false);
@@ -267,6 +294,14 @@ export default function HomePage({ sessions = [], saveSessions = () => {}, selec
   return (
     <>
       <header className="hero">
+        <button
+          className="theme-toggle-btn"
+          onClick={toggleTheme}
+          aria-label="Toggle Dark Mode"
+          title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        >
+          {isDarkMode ? "☀️" : "🌙"}
+        </button>
         <div className="hero-grid">
           <div className="hero-copy">
             <span className="hero-badge">AI Travel Workspace</span>

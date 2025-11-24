@@ -30,6 +30,10 @@ export default function AuthModal({ onClose }) {
   // Reset error when switching modes
   useEffect(() => {
     setError("");
+    setEmail("");
+    setName("");
+    setPassword("");
+    setConfirmPassword("");
   }, [mode]);
 
   const close = (user) => {
@@ -78,6 +82,7 @@ export default function AuthModal({ onClose }) {
         : { email, password };
 
       console.log(`Attempting ${mode} at ${API_BASE}${endpoint}`);
+      console.log("Payload:", JSON.stringify(payload, null, 2)); // Debug logging
 
       const res = await fetch(`${API_BASE}${endpoint}`, {
         method: "POST",
@@ -100,6 +105,14 @@ export default function AuthModal({ onClose }) {
           throw new Error("Email already registered. Please sign in.");
         }
 
+        if (res.status === 401) {
+          throw new Error(data.detail || "Invalid email or password.");
+        }
+
+        if (res.status === 404) {
+          throw new Error("Authentication service not found. Please contact support.");
+        }
+
         if (res.status === 422 && data.detail) {
           if (Array.isArray(data.detail)) {
             const errorMsg = data.detail.map(err => `${err.loc[1] || 'Field'}: ${err.msg}`).join(', ');
@@ -111,14 +124,16 @@ export default function AuthModal({ onClose }) {
         throw new Error(data.detail || `Authentication failed (${res.status})`);
       }
 
-      // Success
-      console.log("Auth Success:", data);
-      localStorage.setItem("ai_user", JSON.stringify(data.user));
-      if (data.token) {
-        localStorage.setItem("ai_token", data.token);
-      }
+      // Success - handle both 200 and 201
+      if (res.status === 201 || res.status === 200) {
+        console.log("Auth Success:", data);
+        localStorage.setItem("ai_user", JSON.stringify(data.user));
+        if (data.token) {
+          localStorage.setItem("ai_token", data.token);
+        }
 
-      close(data.user);
+        close(data.user);
+      }
     } catch (err) {
       console.error("Auth Exception:", err);
       setError(err.message || "Failed to connect to server. Please try again.");

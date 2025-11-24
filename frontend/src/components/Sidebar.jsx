@@ -57,6 +57,11 @@ export default function Sidebar({
     };
 
     const handleLogout = () => {
+        // Clear all auth state
+        localStorage.removeItem("ai_user");
+        localStorage.removeItem("ai_token");
+        console.log("[AUTH] Logged out - cleared ai_user and ai_token");
+
         // Notify parent component to clear state
         if (onUserUpdate) {
             onUserUpdate(null);

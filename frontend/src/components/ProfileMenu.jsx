@@ -51,6 +51,8 @@ export default function ProfileMenu() {
 
   const signOut = () => {
     localStorage.removeItem("ai_user");
+    localStorage.removeItem("ai_token");
+    console.log("[AUTH] Signed out - cleared ai_user and ai_token");
     setUser(null);
     setOpen(false);
     alert("Signed out");

@@ -17,7 +17,7 @@ export default function ItinerarySection({
   refineMessages,
   onRefine,
   refineLoading,
-  onSaveNote = () => {},
+  onSaveNote = () => { },
   savingNotes = {},
 }) {
   const [shareLink, setShareLink] = useState("");
@@ -25,26 +25,40 @@ export default function ItinerarySection({
   const [emailForm, setEmailForm] = useState(defaultEmailForm);
   const [activeNoteDay, setActiveNoteDay] = useState(null);
   const [noteDraft, setNoteDraft] = useState("");
+  const [expandedDays, setExpandedDays] = useState({});
 
   const days = itinerary?.days || [];
+
   const summaryCards = useMemo(() => {
     if (!itinerary) return [];
     return [
-      { label: "Destination", value: itinerary.destination || "—" },
-      { label: "Duration", value: `${days.length || 0} days` },
-      { label: "Theme", value: itinerary.summary || "Balanced pacing" },
+      { label: "Destination", value: itinerary.destination || "—", icon: "📍" },
+      { label: "Duration", value: `${days.length || 0} days`, icon: "🗓️" },
+      { label: "Theme", value: itinerary.summary || "Balanced", icon: "✨" },
     ];
   }, [itinerary, days.length]);
+
   const hasContent = Boolean(itinerary || itineraryText);
   if (!hasContent) return null;
 
+  const toggleDayDetails = (dayIndex) => {
+    setExpandedDays(prev => ({ ...prev, [dayIndex]: !prev[dayIndex] }));
+  };
+
+  const categorizeSegments = (segments) => {
+    const buckets = { Morning: [], Afternoon: [], Evening: [] };
+    segments?.forEach(seg => {
+      const p = (seg.period || "").toLowerCase();
+      if (p.includes("morning") || p.includes("breakfast") || p.includes("am")) buckets.Morning.push(seg);
+      else if (p.includes("afternoon") || p.includes("lunch") || p.includes("midday")) buckets.Afternoon.push(seg);
+      else buckets.Evening.push(seg);
+    });
+    return buckets;
+  };
+
   const handleShareLink = async () => {
     try {
-      const payload = {
-        itineraryText,
-        itinerary,
-        generatedAt: Date.now(),
-      };
+      const payload = { itineraryText, itinerary, generatedAt: Date.now() };
       const shareId = btoa(JSON.stringify(payload)).slice(0, 24);
       const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, "");
       const link = `${baseUrl}/share/${shareId}`;
@@ -60,11 +74,7 @@ export default function ItinerarySection({
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     if (!emailForm.to) return;
-    await onShareEmail({
-      to: emailForm.to,
-      subject: emailForm.subject,
-      message: emailForm.message,
-    });
+    await onShareEmail({ ...emailForm });
     setEmailModal(false);
     setEmailForm(defaultEmailForm);
   };
@@ -79,175 +89,171 @@ export default function ItinerarySection({
     setActiveNoteDay(null);
   };
 
-  const renderDayCard = (day, idx) => (
-    <article key={day.day || idx} className="itinerary-day-card">
-      <header className="itinerary-day-head">
-        <div>
-          <p className="eyebrow">Day {day.day}</p>
-          <h4>{day.headline || day.date}</h4>
-        </div>
-        <span className="muted">{day.date}</span>
-      </header>
-      {day.highlights && <p className="day-highlights">{day.highlights}</p>}
-      <div className="segments-grid">
-        {day.segments?.map((seg, i) => (
-          <div key={i} className="segment-card">
-            <div className="segment-period">{seg.period}</div>
-            <p className="segment-activity">{seg.activity}</p>
-            {seg.food && <p className="segment-meta">🍽 {seg.food}</p>}
-            {seg.tips && seg.tips.length > 0 && <p className="segment-meta">💡 {seg.tips[0]}</p>}
-          </div>
-        ))}
+  const renderSegment = (seg, idx) => (
+    <div key={idx} className="sub-card-item">
+      <div className="sub-card-header">
+        <span className="activity-name">{seg.activity}</span>
       </div>
-      <div className="day-meta">
-        {day.travel_time && <span>🧭 {day.travel_time}</span>}
-        {day.weather_note && <span>🌤 {day.weather_note}</span>}
-        {day.safety_tip && <span>🛡 {day.safety_tip}</span>}
-        {day.budget_tip && <span>💰 {day.budget_tip}</span>}
+      <div className="sub-card-meta">
+        {seg.food && <span className="tag-food">🍽 {seg.food}</span>}
+        {seg.tips && seg.tips[0] && <span className="tag-tip">💡 {seg.tips[0]}</span>}
       </div>
-      {day.notes && day.notes.length > 0 && (
-        <ul className="day-notes">
-          {day.notes.map((note, noteIdx) => (
-            <li key={noteIdx}>{note}</li>
-          ))}
-        </ul>
-      )}
-      <div className="day-note-footer">
-        {day.personal_note ? <span className="muted">📝 {day.personal_note}</span> : <span className="muted">Add a quick note</span>}
-        <button
-          type="button"
-          className="day-note-trigger"
-          onClick={() => openNoteEditor(day)}
-          aria-label={`Add note for day ${day.day}`}
-        >
-          📝
-        </button>
-      </div>
-      {activeNoteDay === day.day && (
-        <form
-          className="day-note-editor"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleNoteSubmit(day);
-          }}
-        >
-          <textarea
-            value={noteDraft}
-            maxLength={180}
-            onChange={(e) => setNoteDraft(e.target.value)}
-            placeholder="Add a short personal reminder..."
-          />
-          <div className="note-actions">
-            <button type="button" onClick={() => setActiveNoteDay(null)}>
-              Cancel
-            </button>
-            <button type="submit" disabled={Boolean(savingNotes[day.day])}>
-              {savingNotes[day.day] ? "Saving..." : "Save"}
-            </button>
-          </div>
-        </form>
-      )}
-    </article>
+    </div>
   );
 
-  return (
-    <section className="itinerary-expanded">
-      <div className="card itinerary-card">
-        <div className="card-header itinerary-card-head">
-          <div>
-            <p className="eyebrow">Itinerary</p>
-            <h3>Orchestrated day-by-day plan</h3>
+  const renderDayCard = (day, idx) => {
+    const buckets = categorizeSegments(day.segments);
+    const isExpanded = expandedDays[idx];
+
+    return (
+      <article key={day.day || idx} className="day-card-new">
+        <header className="day-header-new">
+          <div className="day-title-group">
+            <span className="day-number">Day {day.day}</span>
+            <h4 className="day-headline">{day.headline || day.date}</h4>
           </div>
-          <div className="itinerary-actions">
-            <button className="btn-share" onClick={handleShareLink}>
-              🔗 Share link
-            </button>
-            <button className="btn-share" onClick={() => setEmailModal(true)} disabled={emailSending}>
-              {emailSending ? "Sending..." : "📤 Share via email"}
-            </button>
-            <button className="btn-download" onClick={onDownloadPdf}>
-              📥 Download PDF
-            </button>
+          <span className="day-date-muted">{day.date}</span>
+        </header>
+
+        {day.highlights && <p className="day-highlights-text">{day.highlights}</p>}
+
+        <div className="day-periods-grid">
+          {["Morning", "Afternoon", "Evening"].map((period) => (
+            <div key={period} className="period-column">
+              <h5 className="period-title">
+                {period === "Morning" ? "🌅" : period === "Afternoon" ? "☀️" : "🌙"} {period}
+              </h5>
+              <div className="period-content">
+                {buckets[period].length > 0 ? (
+                  <>
+                    {renderSegment(buckets[period][0], 0)}
+                    {buckets[period].length > 1 && (
+                      <>
+                        {isExpanded && buckets[period].slice(1).map((s, i) => renderSegment(s, i + 1))}
+                        {!isExpanded && (
+                          <button className="btn-more-activities" onClick={() => toggleDayDetails(idx)}>
+                            + {buckets[period].length - 1} more
+                          </button>
+                        )}
+                      </>
+                    )}
+                  </>
+                ) : (
+                  <span className="empty-period">Free time</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="day-summary-strip">
+          <div className="strip-item">
+            <span className="icon">🧭</span>
+            <span>{day.travel_time || "—"}</span>
+          </div>
+          <div className="strip-item">
+            <span className="icon">💰</span>
+            <span>{day.budget_tip || "Est. $50-100"}</span>
+          </div>
+          <div className="strip-item note-trigger-wrapper">
+            {activeNoteDay === day.day ? (
+              <form
+                className="inline-note-form"
+                onSubmit={(e) => { e.preventDefault(); handleNoteSubmit(day); }}
+              >
+                <input
+                  autoFocus
+                  value={noteDraft}
+                  onChange={(e) => setNoteDraft(e.target.value)}
+                  placeholder="Add note..."
+                  onBlur={() => handleNoteSubmit(day)} // Auto-save on blur
+                />
+              </form>
+            ) : (
+              <button className="btn-quick-note" onClick={() => openNoteEditor(day)}>
+                {day.personal_note ? `📝 ${day.personal_note}` : "+ Add quick note"}
+              </button>
+            )}
           </div>
         </div>
-        {shareLink && (
-          <p className="share-link-hint muted">
-            Link copied • {shareLink}
-          </p>
-        )}
+      </article>
+    );
+  };
 
-        {summaryCards.length > 0 && (
-          <div className="itinerary-summary-grid">
+  return (
+    <section className="itinerary-layout">
+      {/* Main Content Column */}
+      <div className="itinerary-main">
+        <div className="itinerary-header-row">
+          <div className="header-summary-cards">
             {summaryCards.map((card) => (
-              <div key={card.label} className="summary-card">
-                <span>{card.label}</span>
-                <strong>{card.value}</strong>
+              <div key={card.label} className="header-card">
+                <span className="header-icon">{card.icon}</span>
+                <div>
+                  <span className="header-label">{card.label}</span>
+                  <strong className="header-value">{card.value}</strong>
+                </div>
               </div>
             ))}
           </div>
-        )}
-
-        {days.length > 0 ? (
-          <div className="itinerary-days-grid">{days.map(renderDayCard)}</div>
-        ) : (
-          <div className="itinerary-body">
-            {itineraryText?.split("\n").map((line, idx) =>
-              line.trim() ? (
-                <p key={idx} className="itinerary-line">
-                  {line}
-                </p>
-              ) : (
-                <br key={idx} />
-              )
-            )}
+          <div className="header-actions">
+            <button className="btn-action-subtle" onClick={handleShareLink}>🔗 Share</button>
+            <button className="btn-action-subtle" onClick={onDownloadPdf}>📥 PDF</button>
           </div>
-        )}
+        </div>
+
+        {shareLink && <div className="share-toast">Link copied: {shareLink}</div>}
+
+        <div className="days-container">
+          {days.length > 0 ? days.map(renderDayCard) : (
+            <div className="text-only-fallback">
+              {itineraryText?.split("\n").map((line, i) => <p key={i}>{line}</p>)}
+            </div>
+          )}
+        </div>
+
+        <div className="refine-section-wrapper">
+          <h3>Refine your trip</h3>
+          <RefineChat messages={refineMessages} onSend={onRefine} loading={refineLoading} />
+        </div>
       </div>
 
-      <RefineChat messages={refineMessages} onSend={onRefine} loading={refineLoading} />
+      {/* Sticky Sidebar Column */}
+      <aside className="itinerary-sidebar">
+        <div className="sidebar-widget summary-widget">
+          <h4>Trip Summary</h4>
+          <div className="widget-row">
+            <span>Total Days</span>
+            <strong>{days.length}</strong>
+          </div>
+          <div className="widget-row">
+            <span>Est. Budget</span>
+            <strong>$1,200 - $1,500</strong>
+          </div>
+          <hr />
+          <button className="btn-primary-full" onClick={() => document.querySelector('.refine-section-wrapper').scrollIntoView({ behavior: 'smooth' })}>
+            ✨ Refine Itinerary
+          </button>
+          <button className="btn-secondary-full" onClick={() => setEmailModal(true)}>
+            📤 Share via Email
+          </button>
+        </div>
+      </aside>
 
       {emailModal && (
-        <div className="email-share-overlay" role="dialog" aria-modal="true">
+        <div className="email-share-overlay" role="dialog">
           <div className="email-share-card">
             <header>
               <h4>Share via Email</h4>
               <button onClick={() => setEmailModal(false)}>✕</button>
             </header>
             <form onSubmit={handleEmailSubmit}>
-              <label>
-                Recipient email
-                <input
-                  type="email"
-                  value={emailForm.to}
-                  onChange={(e) => setEmailForm((prev) => ({ ...prev, to: e.target.value }))}
-                  placeholder="traveler@example.com"
-                  required
-                />
-              </label>
-              <label>
-                Subject
-                <input
-                  type="text"
-                  value={emailForm.subject}
-                  onChange={(e) => setEmailForm((prev) => ({ ...prev, subject: e.target.value }))}
-                  required
-                />
-              </label>
-              <label>
-                Message
-                <textarea
-                  value={emailForm.message}
-                  onChange={(e) => setEmailForm((prev) => ({ ...prev, message: e.target.value }))}
-                  rows={4}
-                />
-              </label>
+              <label>To <input type="email" value={emailForm.to} onChange={e => setEmailForm({ ...emailForm, to: e.target.value })} required /></label>
+              <label>Subject <input type="text" value={emailForm.subject} onChange={e => setEmailForm({ ...emailForm, subject: e.target.value })} required /></label>
+              <label>Message <textarea value={emailForm.message} onChange={e => setEmailForm({ ...emailForm, message: e.target.value })} rows={4} /></label>
               <div className="email-actions">
-                <button type="button" onClick={() => setEmailModal(false)}>
-                  Cancel
-                </button>
-                <button type="submit" disabled={emailSending}>
-                  {emailSending ? "Sending..." : "Send itinerary"}
-                </button>
+                <button type="button" onClick={() => setEmailModal(false)}>Cancel</button>
+                <button type="submit" disabled={emailSending}>{emailSending ? "Sending..." : "Send"}</button>
               </div>
             </form>
           </div>
