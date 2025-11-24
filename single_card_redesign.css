@@ -1,0 +1,154 @@
+/* ============================================
+   ITINERARY REDESIGN - SINGLE CARD LAYOUT
+   ============================================ */
+
+/* 1. Main Container as Single Card */
+.days-container {
+    background: var(--panel);
+    border-radius: 24px;
+    box-shadow: var(--shadow-card);
+    padding: 40px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* Remove gap, use padding/border instead */
+}
+
+/* 2. Day Sections - Reset "Card" Styles */
+.day-card-new {
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+    margin: 0;
+    transition: none;
+    /* Remove hover movement */
+}
+
+.day-card-new:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.day-card-new:first-child {
+    padding-top: 0;
+}
+
+/* Remove hover effects that might look "odd" in this context */
+.day-card-new:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.day-card-new::before {
+    display: none;
+    /* Remove the accent border on hover */
+}
+
+/* 3. Typography & Headings */
+.day-header-new {
+    border-bottom: none;
+    /* Remove header border, we use section border */
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.day-number {
+    background: transparent;
+    /* Remove badge background */
+    padding: 0;
+    color: var(--accent);
+    font-size: 16px;
+    font-weight: 800;
+    /* Extra bold */
+    letter-spacing: 0.05em;
+}
+
+.day-headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* 4. Period Grid - Simplified */
+.day-periods-grid {
+    gap: 20px;
+}
+
+.period-column {
+    background: var(--panel-soft);
+    /* Keep soft background */
+    border: none;
+    /* Remove border */
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: none;
+    /* Flat look */
+}
+
+.period-column:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Remove top borders if they feel too busy, or keep them subtle */
+.period-column:nth-child(1),
+.period-column:nth-child(2),
+.period-column:nth-child(3) {
+    border-top: none;
+}
+
+.period-title {
+    font-size: 14px;
+    margin-bottom: 16px;
+    opacity: 0.8;
+}
+
+/* 5. Activity Items - Clean List */
+.sub-card-item {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    box-shadow: none;
+    margin-bottom: 8px;
+}
+
+.sub-card-item:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 6. Summary Strip - Integrated */
+.day-summary-strip {
+    border-top: none;
+    margin-top: 20px;
+    padding-top: 0;
+    gap: 12px;
+}
+
+.strip-item {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    border-radius: 50px;
+    /* Pill shape */
+}
+
+.strip-item:hover {
+    transform: none;
+    background: var(--panel-soft);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .days-container {
+        padding: 24px;
+    }
+
+    .day-card-new {
+        padding: 24px 0;
+    }
+}

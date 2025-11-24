@@ -29,6 +29,19 @@ def generate_itinerary(request: PlanRequest):
             "end_date": request.end_date
         }
         plan_result = generate_full_plan(trip)
+        
+        # plan_result is now the full ItineraryResponse dict with status, itinerary, weather, flights, hotels, images, logs
+        # We need to save it and return it with the itinerary_id
+        
+        # For backward compatibility with frontend, extract the options arrays from flights/hotels
+        # Frontend expects flights and hotels to be arrays, not objects
+        flights_data = plan_result.get("flights", {})
+        hotels_data = plan_result.get("hotels", {})
+        
+        # Extract just the options arrays for the frontend
+        flights_array = flights_data.get("options", []) if isinstance(flights_data, dict) else flights_data
+        hotels_array = hotels_data.get("options", []) if isinstance(hotels_data, dict) else hotels_data
+        
         record = itinerary_store.create_record(
             plan_result,
             metadata={
@@ -38,13 +51,25 @@ def generate_itinerary(request: PlanRequest):
                 ],
             },
         )
+        
+        # Return the full plan_result plus the itinerary_id and conversation
+        # But override flights and hotels with just the arrays for backward compatibility
         response = {
             **plan_result,
+            "flights": flights_array,
+            "hotels": hotels_array,
             "itinerary_id": record["id"],
             "conversation": record["conversation"],
         }
+        
+        # Add destination if not already in response (extracted from prompt in planner_service)
+        if "destination" not in response and "destination" in trip:
+            response["destination"] = trip["destination"]
+        
         return response
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Failed to generate itinerary: {str(e)}")
 
 @router.post("/refine")

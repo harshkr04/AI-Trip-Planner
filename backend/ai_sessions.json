@@ -1,5 +1,3379 @@
 [
   {
+    "id": 1764015006022,
+    "title": "plan a 4 day trip to lonavala ",
+    "createdAt": 1764015006022,
+    "prompt": "plan a 4 day trip to lonavala ",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-30",
+    "itinerary": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Arrival in Lonavala\n\nCheck-in to hotel and explore nearby areas\n\nMorning:\n  Check-in to hotel\n  Cost: ₹500\n\nAfternoon:\n  Visit Lonavala Lake\n  Duration: 2 hours\n  Cost: ₹100\n\nEstimated cost for Day 1: ₹2000\n\nImportant Notes:\n  • Carry sunscreen and sunglasses\n\n---\n\nDay 2 — Tiger Point and Bushy Dam\n\nVisit Tiger Point and Bushy Dam\n\nMorning:\n  Visit Tiger Point\n  Duration: 1 hour\n  Cost: ₹50\n\nAfternoon:\n  Visit Bushy Dam\n  Duration: 2 hours\n  Cost: ₹100\n\nEstimated cost for Day 2: ₹1500\n\nImportant Notes:\n  • Wear comfortable shoes\n\n---\n\nDay 3 — Karla Caves and Bhaja Caves\n\nExplore Karla Caves and Bhaja Caves\n\nMorning:\n  Visit Karla Caves\n  Duration: 2 hours\n  Cost: ₹100\n\nAfternoon:\n  Visit Bhaja Caves\n  Duration: 2 hours\n  Cost: ₹100\n\nEstimated cost for Day 3: ₹2000\n\nImportant Notes:\n  • Carry water and snacks\n\n---\n\nDay 4 — Lion Point and Shooting Point\n\nVisit Lion Point and Shooting Point\n\nMorning:\n  Visit Lion Point\n  Duration: 1 hour\n  Cost: ₹50\n\nAfternoon:\n  Visit Shooting Point\n  Duration: 2 hours\n  Cost: ₹100\n\nEstimated cost for Day 4: ₹1500\n\nImportant Notes:\n  • Be careful while taking photos\n\n---\n\nDay 5 — Departure from Lonavala\n\nCheck-out from hotel and depart\n\nMorning:\n  Check-out from hotel\n  Cost: ₹500\n\nEstimated cost for Day 5: ₹1000\n\nImportant Notes:\n  • Check-out time is 11 am\n\n---\n",
+    "itinerary_text": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Arrival in Lonavala\n\nCheck-in to hotel and explore nearby areas\n\nMorning:\n  Check-in to hotel\n  Cost: ₹500\n\nAfternoon:\n  Visit Lonavala Lake\n  Duration: 2 hours\n  Cost: ₹100\n\nEstimated cost for Day 1: ₹2000\n\nImportant Notes:\n  • Carry sunscreen and sunglasses\n\n---\n\nDay 2 — Tiger Point and Bushy Dam\n\nVisit Tiger Point and Bushy Dam\n\nMorning:\n  Visit Tiger Point\n  Duration: 1 hour\n  Cost: ₹50\n\nAfternoon:\n  Visit Bushy Dam\n  Duration: 2 hours\n  Cost: ₹100\n\nEstimated cost for Day 2: ₹1500\n\nImportant Notes:\n  • Wear comfortable shoes\n\n---\n\nDay 3 — Karla Caves and Bhaja Caves\n\nExplore Karla Caves and Bhaja Caves\n\nMorning:\n  Visit Karla Caves\n  Duration: 2 hours\n  Cost: ₹100\n\nAfternoon:\n  Visit Bhaja Caves\n  Duration: 2 hours\n  Cost: ₹100\n\nEstimated cost for Day 3: ₹2000\n\nImportant Notes:\n  • Carry water and snacks\n\n---\n\nDay 4 — Lion Point and Shooting Point\n\nVisit Lion Point and Shooting Point\n\nMorning:\n  Visit Lion Point\n  Duration: 1 hour\n  Cost: ₹50\n\nAfternoon:\n  Visit Shooting Point\n  Duration: 2 hours\n  Cost: ₹100\n\nEstimated cost for Day 4: ₹1500\n\nImportant Notes:\n  • Be careful while taking photos\n\n---\n\nDay 5 — Departure from Lonavala\n\nCheck-out from hotel and depart\n\nMorning:\n  Check-out from hotel\n  Cost: ₹500\n\nEstimated cost for Day 5: ₹1000\n\nImportant Notes:\n  • Check-out time is 11 am\n\n---\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Arrival in Lonavala",
+        "summary": "Check-in to hotel and explore nearby areas",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check-in to hotel",
+            "duration": null,
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Lonavala Lake",
+            "duration": "2 hours",
+            "cost_estimate": "₹100"
+          }
+        ],
+        "cost_estimate": "₹2000",
+        "notes": [
+          "Carry sunscreen and sunglasses"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Tiger Point and Bushy Dam",
+        "summary": "Visit Tiger Point and Bushy Dam",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Tiger Point",
+            "duration": "1 hour",
+            "cost_estimate": "₹50"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Bushy Dam",
+            "duration": "2 hours",
+            "cost_estimate": "₹100"
+          }
+        ],
+        "cost_estimate": "₹1500",
+        "notes": [
+          "Wear comfortable shoes"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Karla Caves and Bhaja Caves",
+        "summary": "Explore Karla Caves and Bhaja Caves",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Karla Caves",
+            "duration": "2 hours",
+            "cost_estimate": "₹100"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Bhaja Caves",
+            "duration": "2 hours",
+            "cost_estimate": "₹100"
+          }
+        ],
+        "cost_estimate": "₹2000",
+        "notes": [
+          "Carry water and snacks"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Lion Point and Shooting Point",
+        "summary": "Visit Lion Point and Shooting Point",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Lion Point",
+            "duration": "1 hour",
+            "cost_estimate": "₹50"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Shooting Point",
+            "duration": "2 hours",
+            "cost_estimate": "₹100"
+          }
+        ],
+        "cost_estimate": "₹1500",
+        "notes": [
+          "Be careful while taking photos"
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Departure from Lonavala",
+        "summary": "Check-out from hotel and depart",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check-out from hotel",
+            "duration": null,
+            "cost_estimate": "₹500"
+          }
+        ],
+        "cost_estimate": "₹1000",
+        "notes": [
+          "Check-out time is 11 am"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "26.8°C, Clear, 65% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 26.8,
+          "temp_min": 26.1,
+          "temp_max": 27.8,
+          "icon": "Clear",
+          "humidity": 65
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 26.9,
+          "temp_min": 25.9,
+          "temp_max": 28.4,
+          "icon": "Clear",
+          "humidity": 63
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 27.1,
+          "temp_min": 25.9,
+          "temp_max": 28.3,
+          "icon": "Clouds",
+          "humidity": 60
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 26.8,
+          "temp_min": 25.7,
+          "temp_max": 27.8,
+          "icon": "Clouds",
+          "humidity": 58
+        },
+        {
+          "date": "2025-11-30",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "BOM",
+        "depart": "2025-11-26 17:15:00",
+        "price": "95.68 EUR",
+        "duration": "2H20M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "BOM",
+        "depart": "2025-11-26 05:55:00",
+        "price": "95.68 EUR",
+        "duration": "2H25M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "BOM",
+        "depart": "2025-11-26 09:00:00",
+        "price": "95.68 EUR",
+        "duration": "2H25M"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Mumbai",
+        "area": "Premium Zone",
+        "rating": "4.7★",
+        "price_per_night": "₹9131",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Mumbai",
+        "area": "City Center",
+        "rating": "4.6★",
+        "price_per_night": "₹5823",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Mumbai",
+        "area": "Downtown",
+        "rating": "4.3★",
+        "price_per_night": "₹2953",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Mumbai",
+        "area": "Near Station",
+        "rating": "4.0★",
+        "price_per_night": "₹867",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Mumbai",
+        "area": "Tourist District",
+        "rating": "3.7★",
+        "price_per_night": "₹2678",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "084a288a-f4ad-4a46-aea9-b7f37bb6f235"
+  },
+  {
+    "id": 1764014625941,
+    "title": "plan a 3 day trip to manali ",
+    "createdAt": 1764014625941,
+    "prompt": "plan a 3 day trip to manali ",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-29",
+    "itinerary": "TRIP ITINERARY\n\nDuration: 4 Days\n\nDay 1 — Arrival in Manali\n\nTravel to Manali and check into the hotel\n\nMorning:\n  Travel to Manali\n  Duration: 6 hours\n  Cost: ₹1000\n\nAfternoon:\n  Check into hotel and rest\n  Cost: ₹500\n\nEvening:\n  Explore nearby areas\n  Duration: 2 hours\n  Cost: ₹500\n\nEstimated cost for Day 1: ₹2000\n\nImportant Notes:\n  • Carry warm clothes\n  • Check the hotel reviews\n\n---\n\nDay 2 — Manali Sightseeing\n\nVisit famous spots in Manali\n\nMorning:\n  Visit Hadimba Devi Temple\n  Duration: 1 hour\n  Cost: ₹100\n\nAfternoon:\n  Visit Manu Temple and Museum\n  Duration: 2 hours\n  Cost: ₹200\n\nEvening:\n  Enjoy the riverside\n  Duration: 2 hours\n  Cost: ₹300\n\nEstimated cost for Day 2: ₹600\n\nImportant Notes:\n  • Try local food\n  • Respect the temple rules\n\n---\n\nDay 3 — Adventure in Manali\n\nEnjoy adventure activities in Manali\n\nMorning:\n  Go for trekking\n  Duration: 4 hours\n  Cost: ₹800\n\nAfternoon:\n  Try river rafting\n  Duration: 2 hours\n  Cost: ₹600\n\nEvening:\n  Enjoy the campfire\n  Duration: 2 hours\n  Cost: ₹400\n\nEstimated cost for Day 3: ₹1800\n\nImportant Notes:\n  • Wear comfortable shoes\n  • Follow the instructor\n\n---\n\nDay 4 — Departure from Manali\n\nCheck out of the hotel and travel back\n\nMorning:\n  Check out of the hotel\n  Cost: ₹0\n\nAfternoon:\n  Travel back home\n  Duration: 6 hours\n  Cost: ₹1000\n\nEstimated cost for Day 4: ₹1000\n\nImportant Notes:\n  • Check the hotel bill\n  • Carry snacks for the journey\n\n---\n",
+    "itinerary_text": "TRIP ITINERARY\n\nDuration: 4 Days\n\nDay 1 — Arrival in Manali\n\nTravel to Manali and check into the hotel\n\nMorning:\n  Travel to Manali\n  Duration: 6 hours\n  Cost: ₹1000\n\nAfternoon:\n  Check into hotel and rest\n  Cost: ₹500\n\nEvening:\n  Explore nearby areas\n  Duration: 2 hours\n  Cost: ₹500\n\nEstimated cost for Day 1: ₹2000\n\nImportant Notes:\n  • Carry warm clothes\n  • Check the hotel reviews\n\n---\n\nDay 2 — Manali Sightseeing\n\nVisit famous spots in Manali\n\nMorning:\n  Visit Hadimba Devi Temple\n  Duration: 1 hour\n  Cost: ₹100\n\nAfternoon:\n  Visit Manu Temple and Museum\n  Duration: 2 hours\n  Cost: ₹200\n\nEvening:\n  Enjoy the riverside\n  Duration: 2 hours\n  Cost: ₹300\n\nEstimated cost for Day 2: ₹600\n\nImportant Notes:\n  • Try local food\n  • Respect the temple rules\n\n---\n\nDay 3 — Adventure in Manali\n\nEnjoy adventure activities in Manali\n\nMorning:\n  Go for trekking\n  Duration: 4 hours\n  Cost: ₹800\n\nAfternoon:\n  Try river rafting\n  Duration: 2 hours\n  Cost: ₹600\n\nEvening:\n  Enjoy the campfire\n  Duration: 2 hours\n  Cost: ₹400\n\nEstimated cost for Day 3: ₹1800\n\nImportant Notes:\n  • Wear comfortable shoes\n  • Follow the instructor\n\n---\n\nDay 4 — Departure from Manali\n\nCheck out of the hotel and travel back\n\nMorning:\n  Check out of the hotel\n  Cost: ₹0\n\nAfternoon:\n  Travel back home\n  Duration: 6 hours\n  Cost: ₹1000\n\nEstimated cost for Day 4: ₹1000\n\nImportant Notes:\n  • Check the hotel bill\n  • Carry snacks for the journey\n\n---\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Arrival in Manali",
+        "summary": "Travel to Manali and check into the hotel",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Travel to Manali",
+            "duration": "6 hours",
+            "cost_estimate": "₹1000"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Check into hotel and rest",
+            "duration": null,
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Evening",
+            "activity": "Explore nearby areas",
+            "duration": "2 hours",
+            "cost_estimate": "₹500"
+          }
+        ],
+        "cost_estimate": "₹2000",
+        "notes": [
+          "Carry warm clothes",
+          "Check the hotel reviews"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Manali Sightseeing",
+        "summary": "Visit famous spots in Manali",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Hadimba Devi Temple",
+            "duration": "1 hour",
+            "cost_estimate": "₹100"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Manu Temple and Museum",
+            "duration": "2 hours",
+            "cost_estimate": "₹200"
+          },
+          {
+            "period": "Evening",
+            "activity": "Enjoy the riverside",
+            "duration": "2 hours",
+            "cost_estimate": "₹300"
+          }
+        ],
+        "cost_estimate": "₹600",
+        "notes": [
+          "Try local food",
+          "Respect the temple rules"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Adventure in Manali",
+        "summary": "Enjoy adventure activities in Manali",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Go for trekking",
+            "duration": "4 hours",
+            "cost_estimate": "₹800"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Try river rafting",
+            "duration": "2 hours",
+            "cost_estimate": "₹600"
+          },
+          {
+            "period": "Evening",
+            "activity": "Enjoy the campfire",
+            "duration": "2 hours",
+            "cost_estimate": "₹400"
+          }
+        ],
+        "cost_estimate": "₹1800",
+        "notes": [
+          "Wear comfortable shoes",
+          "Follow the instructor"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Departure from Manali",
+        "summary": "Check out of the hotel and travel back",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check out of the hotel",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Travel back home",
+            "duration": "6 hours",
+            "cost_estimate": "₹1000"
+          }
+        ],
+        "cost_estimate": "₹1000",
+        "notes": [
+          "Check the hotel bill",
+          "Carry snacks for the journey"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "26.6°C, Clouds, 61% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 26.6,
+          "temp_min": 25.1,
+          "temp_max": 28.3,
+          "icon": "Clouds",
+          "humidity": 61
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 26.5,
+          "temp_min": 25,
+          "temp_max": 27.9,
+          "icon": "Clouds",
+          "humidity": 65
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 25.9,
+          "temp_min": 24.5,
+          "temp_max": 26.6,
+          "icon": "Clouds",
+          "humidity": 71
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 20.5,
+          "temp_min": 18.3,
+          "temp_max": 23.7,
+          "icon": "Rain",
+          "humidity": 92
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "SpiceJet",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-26 02:15 PM",
+        "price": "₹3561",
+        "duration": "2h 30m"
+      },
+      {
+        "airline": "IndiGo",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-26 06:00 AM",
+        "price": "₹4225",
+        "duration": "2h 30m"
+      },
+      {
+        "airline": "Air India",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-26 09:30 AM",
+        "price": "₹6495",
+        "duration": "2h 30m"
+      },
+      {
+        "airline": "Vistara",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-26 06:45 PM",
+        "price": "₹7076",
+        "duration": "2h 30m"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Manali",
+        "area": "Premium Zone",
+        "rating": "4.9★",
+        "price_per_night": "₹5407",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Manali",
+        "area": "City Center",
+        "rating": "4.3★",
+        "price_per_night": "₹4024",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Manali",
+        "area": "Downtown",
+        "rating": "4.2★",
+        "price_per_night": "₹2562",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Manali",
+        "area": "Near Station",
+        "rating": "4.0★",
+        "price_per_night": "₹603",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Manali",
+        "area": "Tourist District",
+        "rating": "3.6★",
+        "price_per_night": "₹1365",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "f4137e81-9472-40f2-9a82-88a6695ea6d9"
+  },
+  {
+    "id": 1764013707191,
+    "title": "plan a 3 day trip to manali ",
+    "createdAt": 1764013707191,
+    "prompt": "plan a 3 day trip to manali ",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-29",
+    "itinerary": "TRIP ITINERARY\n\nDuration: 4 Days\n\nDay 1 — Arrival in Manali\n\nArrive in Manali and check into the hotel, explore the local market and get accustomed to the weather\n\nMorning:\n  Check into the hotel\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Explore the local market\n  Duration: 3 hours\n  Cost: ₹200\n\nEvening:\n  Dinner at a local restaurant\n  Duration: 2 hours\n  Cost: ₹800\n\nEstimated cost for Day 1: ₹1500\n\nImportant Notes:\n  • Carry light woolen clothes\n  • Check the hotel reviews before booking\n\n---\n\nDay 2 — Sightseeing in Manali\n\nVisit the famous attractions in Manali, including the Hadimba Devi Temple and the Manu Temple\n\nMorning:\n  Visit the Hadimba Devi Temple\n  Duration: 1.5 hours\n  Cost: ₹100\n\nAfternoon:\n  Visit the Manu Temple\n  Duration: 1.5 hours\n  Cost: ₹100\n\nEvening:\n  Take a stroll along the Beas River\n  Duration: 2 hours\n  Cost: ₹0\n\nEstimated cost for Day 2: ₹1200\n\nImportant Notes:\n  • Wear comfortable shoes\n  • Respect the temple rules and regulations\n\n---\n\nDay 3 — Adventure activities\n\nEnjoy adventure activities such as rafting and paragliding in Manali\n\nMorning:\n  Go rafting in the Beas River\n  Duration: 2 hours\n  Cost: ₹800\n\nAfternoon:\n  Go paragliding\n  Duration: 1 hour\n  Cost: ₹1200\n\nEvening:\n  Relax at the hotel\n  Duration: 3 hours\n  Cost: ₹0\n\nEstimated cost for Day 3: ₹2000\n\nImportant Notes:\n  • Check the safety equipment\n  • Follow the instructions of the guide\n\n---\n\nDay 4 — Departure from Manali\n\nCheck out of the hotel and depart from Manali\n\nMorning:\n  Check out of the hotel\n  Duration: 1 hour\n  Cost: ₹0\n\nAfternoon:\n  Depart from Manali\n  Duration: 2 hours\n  Cost: ₹500\n\nEstimated cost for Day 4: ₹500\n\nImportant Notes:\n  • Check the hotel bill before checking out\n  • Book the return tickets in advance\n\n---\n",
+    "itinerary_text": "TRIP ITINERARY\n\nDuration: 4 Days\n\nDay 1 — Arrival in Manali\n\nArrive in Manali and check into the hotel, explore the local market and get accustomed to the weather\n\nMorning:\n  Check into the hotel\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Explore the local market\n  Duration: 3 hours\n  Cost: ₹200\n\nEvening:\n  Dinner at a local restaurant\n  Duration: 2 hours\n  Cost: ₹800\n\nEstimated cost for Day 1: ₹1500\n\nImportant Notes:\n  • Carry light woolen clothes\n  • Check the hotel reviews before booking\n\n---\n\nDay 2 — Sightseeing in Manali\n\nVisit the famous attractions in Manali, including the Hadimba Devi Temple and the Manu Temple\n\nMorning:\n  Visit the Hadimba Devi Temple\n  Duration: 1.5 hours\n  Cost: ₹100\n\nAfternoon:\n  Visit the Manu Temple\n  Duration: 1.5 hours\n  Cost: ₹100\n\nEvening:\n  Take a stroll along the Beas River\n  Duration: 2 hours\n  Cost: ₹0\n\nEstimated cost for Day 2: ₹1200\n\nImportant Notes:\n  • Wear comfortable shoes\n  • Respect the temple rules and regulations\n\n---\n\nDay 3 — Adventure activities\n\nEnjoy adventure activities such as rafting and paragliding in Manali\n\nMorning:\n  Go rafting in the Beas River\n  Duration: 2 hours\n  Cost: ₹800\n\nAfternoon:\n  Go paragliding\n  Duration: 1 hour\n  Cost: ₹1200\n\nEvening:\n  Relax at the hotel\n  Duration: 3 hours\n  Cost: ₹0\n\nEstimated cost for Day 3: ₹2000\n\nImportant Notes:\n  • Check the safety equipment\n  • Follow the instructions of the guide\n\n---\n\nDay 4 — Departure from Manali\n\nCheck out of the hotel and depart from Manali\n\nMorning:\n  Check out of the hotel\n  Duration: 1 hour\n  Cost: ₹0\n\nAfternoon:\n  Depart from Manali\n  Duration: 2 hours\n  Cost: ₹500\n\nEstimated cost for Day 4: ₹500\n\nImportant Notes:\n  • Check the hotel bill before checking out\n  • Book the return tickets in advance\n\n---\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Arrival in Manali",
+        "summary": "Arrive in Manali and check into the hotel, explore the local market and get accustomed to the weather",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check into the hotel",
+            "duration": "2 hours",
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Explore the local market",
+            "duration": "3 hours",
+            "cost_estimate": "₹200"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner at a local restaurant",
+            "duration": "2 hours",
+            "cost_estimate": "₹800"
+          }
+        ],
+        "cost_estimate": "₹1500",
+        "notes": [
+          "Carry light woolen clothes",
+          "Check the hotel reviews before booking"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Sightseeing in Manali",
+        "summary": "Visit the famous attractions in Manali, including the Hadimba Devi Temple and the Manu Temple",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit the Hadimba Devi Temple",
+            "duration": "1.5 hours",
+            "cost_estimate": "₹100"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit the Manu Temple",
+            "duration": "1.5 hours",
+            "cost_estimate": "₹100"
+          },
+          {
+            "period": "Evening",
+            "activity": "Take a stroll along the Beas River",
+            "duration": "2 hours",
+            "cost_estimate": "₹0"
+          }
+        ],
+        "cost_estimate": "₹1200",
+        "notes": [
+          "Wear comfortable shoes",
+          "Respect the temple rules and regulations"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Adventure activities",
+        "summary": "Enjoy adventure activities such as rafting and paragliding in Manali",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Go rafting in the Beas River",
+            "duration": "2 hours",
+            "cost_estimate": "₹800"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Go paragliding",
+            "duration": "1 hour",
+            "cost_estimate": "₹1200"
+          },
+          {
+            "period": "Evening",
+            "activity": "Relax at the hotel",
+            "duration": "3 hours",
+            "cost_estimate": "₹0"
+          }
+        ],
+        "cost_estimate": "₹2000",
+        "notes": [
+          "Check the safety equipment",
+          "Follow the instructions of the guide"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Departure from Manali",
+        "summary": "Check out of the hotel and depart from Manali",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check out of the hotel",
+            "duration": "1 hour",
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Depart from Manali",
+            "duration": "2 hours",
+            "cost_estimate": "₹500"
+          }
+        ],
+        "cost_estimate": "₹500",
+        "notes": [
+          "Check the hotel bill before checking out",
+          "Book the return tickets in advance"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "26.6°C, Clouds, 61% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 26.6,
+          "temp_min": 25.1,
+          "temp_max": 28.3,
+          "icon": "Clouds",
+          "humidity": 61
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 26.5,
+          "temp_min": 25,
+          "temp_max": 27.9,
+          "icon": "Clouds",
+          "humidity": 65
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 25.9,
+          "temp_min": 24.5,
+          "temp_max": 26.6,
+          "icon": "Clouds",
+          "humidity": 71
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 20.5,
+          "temp_min": 18.3,
+          "temp_max": 23.7,
+          "icon": "Rain",
+          "humidity": 92
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "SpiceJet",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-26 02:15 PM",
+        "price": "₹3472",
+        "duration": "2h 30m"
+      },
+      {
+        "airline": "IndiGo",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-26 06:00 AM",
+        "price": "₹4084",
+        "duration": "2h 30m"
+      },
+      {
+        "airline": "Air India",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-26 09:30 AM",
+        "price": "₹5548",
+        "duration": "2h 30m"
+      },
+      {
+        "airline": "Vistara",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-26 06:45 PM",
+        "price": "₹5726",
+        "duration": "2h 30m"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "The Grand Manali",
+        "area": "City Center",
+        "rating": "4.7★",
+        "price_per_night": "₹3149",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Luxury Palace Manali",
+        "area": "Premium Zone",
+        "rating": "4.6★",
+        "price_per_night": "₹8071",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Manali",
+        "area": "Downtown",
+        "rating": "4.3★",
+        "price_per_night": "₹2817",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Manali",
+        "area": "Near Station",
+        "rating": "3.9★",
+        "price_per_night": "₹832",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Manali",
+        "area": "Tourist District",
+        "rating": "3.6★",
+        "price_per_night": "₹1669",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "17b38a45-b67a-4ee9-ac22-ac58d85a7e87"
+  },
+  {
+    "id": 1764012961244,
+    "title": "plan a 3 day trip to manali",
+    "createdAt": 1764012961244,
+    "prompt": "plan a 3 day trip to manali",
+    "origin": "Delhi",
+    "start_date": "2025-11-27",
+    "end_date": "2025-11-30",
+    "itinerary": "TRIP ITINERARY\n\nDuration: 4 Days\n\nDay 1 — Arrival in Manali\n\nArrive in Manali and check into the hotel, explore the local market and surroundings\n\nMorning:\n  Check into hotel\n  Cost: ₹500\n\nAfternoon:\n  Visit local market\n  Duration: 2 hours\n  Cost: ₹200\n\nEvening:\n  Explore surroundings\n  Duration: 1 hour\n  Cost: ₹0\n\nEstimated cost for Day 1: ₹1700\n\nImportant Notes:\n  • Do not forget to carry warm clothes\n  • Be prepared for cloudy weather\n\n---\n\nDay 2 — Sightseeing in Manali\n\nVisit famous attractions in Manali such as Hadimba Devi Temple and Manu Temple\n\nMorning:\n  Visit Hadimba Devi Temple\n  Duration: 1.5 hours\n  Cost: ₹100\n\nAfternoon:\n  Visit Manu Temple\n  Duration: 1 hour\n  Cost: ₹50\n\nEvening:\n  Take a stroll along the Beas River\n  Duration: 1.5 hours\n  Cost: ₹0\n\nEstimated cost for Day 2: ₹1150\n\nImportant Notes:\n  • Wear comfortable shoes for temple visits\n  • Carry a water bottle to stay hydrated\n\n---\n\nDay 3 — Adventure Activities\n\nEnjoy adventure activities such as trekking and rafting in Manali\n\nMorning:\n  Trek to nearby hills\n  Duration: 3 hours\n  Cost: ₹800\n\nAfternoon:\n  Go rafting in Beas River\n  Duration: 2 hours\n  Cost: ₹1200\n\nEvening:\n  Relax at the hotel\n  Cost: ₹0\n\nEstimated cost for Day 3: ₹2000\n\nImportant Notes:\n  • Check the weather forecast before trekking\n  • Wear a life jacket while rafting\n\n---\n\nDay 4 — Departure from Manali\n\nCheck out of the hotel and depart from Manali\n\nMorning:\n  Check out of hotel\n  Cost: ₹0\n\nAfternoon:\n  Depart from Manali\n  Cost: ₹500\n\nEstimated cost for Day 4: ₹500\n\nImportant Notes:\n  • Do not forget to carry all belongings\n  • Check the road conditions before departure\n\n---\n",
+    "itinerary_text": "TRIP ITINERARY\n\nDuration: 4 Days\n\nDay 1 — Arrival in Manali\n\nArrive in Manali and check into the hotel, explore the local market and surroundings\n\nMorning:\n  Check into hotel\n  Cost: ₹500\n\nAfternoon:\n  Visit local market\n  Duration: 2 hours\n  Cost: ₹200\n\nEvening:\n  Explore surroundings\n  Duration: 1 hour\n  Cost: ₹0\n\nEstimated cost for Day 1: ₹1700\n\nImportant Notes:\n  • Do not forget to carry warm clothes\n  • Be prepared for cloudy weather\n\n---\n\nDay 2 — Sightseeing in Manali\n\nVisit famous attractions in Manali such as Hadimba Devi Temple and Manu Temple\n\nMorning:\n  Visit Hadimba Devi Temple\n  Duration: 1.5 hours\n  Cost: ₹100\n\nAfternoon:\n  Visit Manu Temple\n  Duration: 1 hour\n  Cost: ₹50\n\nEvening:\n  Take a stroll along the Beas River\n  Duration: 1.5 hours\n  Cost: ₹0\n\nEstimated cost for Day 2: ₹1150\n\nImportant Notes:\n  • Wear comfortable shoes for temple visits\n  • Carry a water bottle to stay hydrated\n\n---\n\nDay 3 — Adventure Activities\n\nEnjoy adventure activities such as trekking and rafting in Manali\n\nMorning:\n  Trek to nearby hills\n  Duration: 3 hours\n  Cost: ₹800\n\nAfternoon:\n  Go rafting in Beas River\n  Duration: 2 hours\n  Cost: ₹1200\n\nEvening:\n  Relax at the hotel\n  Cost: ₹0\n\nEstimated cost for Day 3: ₹2000\n\nImportant Notes:\n  • Check the weather forecast before trekking\n  • Wear a life jacket while rafting\n\n---\n\nDay 4 — Departure from Manali\n\nCheck out of the hotel and depart from Manali\n\nMorning:\n  Check out of hotel\n  Cost: ₹0\n\nAfternoon:\n  Depart from Manali\n  Cost: ₹500\n\nEstimated cost for Day 4: ₹500\n\nImportant Notes:\n  • Do not forget to carry all belongings\n  • Check the road conditions before departure\n\n---\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Arrival in Manali",
+        "summary": "Arrive in Manali and check into the hotel, explore the local market and surroundings",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check into hotel",
+            "duration": null,
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit local market",
+            "duration": "2 hours",
+            "cost_estimate": "₹200"
+          },
+          {
+            "period": "Evening",
+            "activity": "Explore surroundings",
+            "duration": "1 hour",
+            "cost_estimate": "₹0"
+          }
+        ],
+        "cost_estimate": "₹1700",
+        "notes": [
+          "Do not forget to carry warm clothes",
+          "Be prepared for cloudy weather"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Sightseeing in Manali",
+        "summary": "Visit famous attractions in Manali such as Hadimba Devi Temple and Manu Temple",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Hadimba Devi Temple",
+            "duration": "1.5 hours",
+            "cost_estimate": "₹100"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Manu Temple",
+            "duration": "1 hour",
+            "cost_estimate": "₹50"
+          },
+          {
+            "period": "Evening",
+            "activity": "Take a stroll along the Beas River",
+            "duration": "1.5 hours",
+            "cost_estimate": "₹0"
+          }
+        ],
+        "cost_estimate": "₹1150",
+        "notes": [
+          "Wear comfortable shoes for temple visits",
+          "Carry a water bottle to stay hydrated"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Adventure Activities",
+        "summary": "Enjoy adventure activities such as trekking and rafting in Manali",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Trek to nearby hills",
+            "duration": "3 hours",
+            "cost_estimate": "₹800"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Go rafting in Beas River",
+            "duration": "2 hours",
+            "cost_estimate": "₹1200"
+          },
+          {
+            "period": "Evening",
+            "activity": "Relax at the hotel",
+            "duration": null,
+            "cost_estimate": "₹0"
+          }
+        ],
+        "cost_estimate": "₹2000",
+        "notes": [
+          "Check the weather forecast before trekking",
+          "Wear a life jacket while rafting"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Departure from Manali",
+        "summary": "Check out of the hotel and depart from Manali",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check out of hotel",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Depart from Manali",
+            "duration": null,
+            "cost_estimate": "₹500"
+          }
+        ],
+        "cost_estimate": "₹500",
+        "notes": [
+          "Do not forget to carry all belongings",
+          "Check the road conditions before departure"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "26.5°C, Clouds, 65% humidity",
+      "days": [
+        {
+          "date": "2025-11-27",
+          "temp": 26.5,
+          "temp_min": 25,
+          "temp_max": 27.9,
+          "icon": "Clouds",
+          "humidity": 65
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 25.9,
+          "temp_min": 24.5,
+          "temp_max": 26.6,
+          "icon": "Clouds",
+          "humidity": 71
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 20.5,
+          "temp_min": 18.3,
+          "temp_max": 23.7,
+          "icon": "Rain",
+          "humidity": 92
+        },
+        {
+          "date": "2025-11-30",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "SpiceJet",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-27 02:15 PM",
+        "price": "₹3957",
+        "duration": "2h 30m"
+      },
+      {
+        "airline": "IndiGo",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-27 06:00 AM",
+        "price": "₹4455",
+        "duration": "2h 30m"
+      },
+      {
+        "airline": "Air India",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-27 09:30 AM",
+        "price": "₹5436",
+        "duration": "2h 30m"
+      },
+      {
+        "airline": "Vistara",
+        "from": "Delhi",
+        "to": "Manali",
+        "depart": "2025-11-27 06:45 PM",
+        "price": "₹6144",
+        "duration": "2h 30m"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Manali",
+        "area": "Premium Zone",
+        "rating": "4.8★",
+        "price_per_night": "₹6918",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Manali",
+        "area": "City Center",
+        "rating": "4.5★",
+        "price_per_night": "₹3095",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Manali",
+        "area": "Downtown",
+        "rating": "4.3★",
+        "price_per_night": "₹1985",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Manali",
+        "area": "Near Station",
+        "rating": "4.0★",
+        "price_per_night": "₹547",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Manali",
+        "area": "Tourist District",
+        "rating": "3.7★",
+        "price_per_night": "₹1639",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "871780ce-e189-4a35-99e4-7c7c15081480"
+  },
+  {
+    "id": 1764012532758,
+    "title": "plan a 5 day trip to Goa",
+    "createdAt": 1764012532758,
+    "prompt": "plan a 5 day trip to Goa",
+    "origin": "Delhi",
+    "start_date": "2025-12-01",
+    "end_date": "2025-12-05",
+    "itinerary": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Arrival in Goa\n\nArrive at Dabolim Airport and check-in to your hotel, spend the day relaxing on the beach\n\nMorning:\n  Check-in to hotel\n  Cost: ₹500\n\nAfternoon:\n  Visit Miramar Beach\n  Cost: ₹0\n\nEvening:\n  Dinner at a local restaurant\n  Cost: ₹800\n\nEstimated cost for Day 1: ₹2000\n\nImportant Notes:\n  • Hire a taxi from the airport to the hotel\n  • Check the hotel reviews before booking\n\n---\n\nDay 2 — North Goa Tour\n\nExplore the popular beaches and attractions in North Goa\n\nMorning:\n  Visit Fort Aguada\n  Cost: ₹50\n\nAfternoon:\n  Relax on Calangute Beach\n  Cost: ₹0\n\nEvening:\n  Dinner and shopping at Baga Beach\n  Cost: ₹1000\n\nEstimated cost for Day 2: ₹1500\n\nImportant Notes:\n  • Rent a scooter to travel around North Goa\n  • Bargain while shopping at the local markets\n\n---\n\nDay 3 — South Goa Tour\n\nVisit the beautiful beaches and attractions in South Goa\n\nMorning:\n  Visit Colva Beach\n  Cost: ₹0\n\nAfternoon:\n  Relax on Benaulim Beach\n  Cost: ₹0\n\nEvening:\n  Dinner at a local restaurant\n  Cost: ₹800\n\nEstimated cost for Day 3: ₹1200\n\nImportant Notes:\n  • Take a taxi or bus to travel to South Goa\n  • Try the local seafood\n\n---\n\nDay 4 — Water Sports and Activities\n\nEnjoy various water sports and activities in Goa\n\nMorning:\n  Parasailing at Baga Beach\n  Cost: ₹1000\n\nAfternoon:\n  Snorkeling at Grande Island\n  Cost: ₹1500\n\nEvening:\n  Dinner and relaxation\n  Cost: ₹800\n\nEstimated cost for Day 4: ₹3500\n\nImportant Notes:\n  • Book the water sports in advance\n  • Follow the safety instructions carefully\n\n---\n\nDay 5 — Departure from Goa\n\nSpend the morning shopping for souvenirs and depart from Goa\n\nMorning:\n  Shopping for souvenirs\n  Cost: ₹500\n\nAfternoon:\n  Check-out from hotel and depart\n  Cost: ₹500\n\nEstimated cost for Day 5: ₹1000\n\nImportant Notes:\n  • Check the flight departure time\n  • Leave for the airport at least 2 hours before the flight\n\n---\n",
+    "itinerary_text": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Arrival in Goa\n\nArrive at Dabolim Airport and check-in to your hotel, spend the day relaxing on the beach\n\nMorning:\n  Check-in to hotel\n  Cost: ₹500\n\nAfternoon:\n  Visit Miramar Beach\n  Cost: ₹0\n\nEvening:\n  Dinner at a local restaurant\n  Cost: ₹800\n\nEstimated cost for Day 1: ₹2000\n\nImportant Notes:\n  • Hire a taxi from the airport to the hotel\n  • Check the hotel reviews before booking\n\n---\n\nDay 2 — North Goa Tour\n\nExplore the popular beaches and attractions in North Goa\n\nMorning:\n  Visit Fort Aguada\n  Cost: ₹50\n\nAfternoon:\n  Relax on Calangute Beach\n  Cost: ₹0\n\nEvening:\n  Dinner and shopping at Baga Beach\n  Cost: ₹1000\n\nEstimated cost for Day 2: ₹1500\n\nImportant Notes:\n  • Rent a scooter to travel around North Goa\n  • Bargain while shopping at the local markets\n\n---\n\nDay 3 — South Goa Tour\n\nVisit the beautiful beaches and attractions in South Goa\n\nMorning:\n  Visit Colva Beach\n  Cost: ₹0\n\nAfternoon:\n  Relax on Benaulim Beach\n  Cost: ₹0\n\nEvening:\n  Dinner at a local restaurant\n  Cost: ₹800\n\nEstimated cost for Day 3: ₹1200\n\nImportant Notes:\n  • Take a taxi or bus to travel to South Goa\n  • Try the local seafood\n\n---\n\nDay 4 — Water Sports and Activities\n\nEnjoy various water sports and activities in Goa\n\nMorning:\n  Parasailing at Baga Beach\n  Cost: ₹1000\n\nAfternoon:\n  Snorkeling at Grande Island\n  Cost: ₹1500\n\nEvening:\n  Dinner and relaxation\n  Cost: ₹800\n\nEstimated cost for Day 4: ₹3500\n\nImportant Notes:\n  • Book the water sports in advance\n  • Follow the safety instructions carefully\n\n---\n\nDay 5 — Departure from Goa\n\nSpend the morning shopping for souvenirs and depart from Goa\n\nMorning:\n  Shopping for souvenirs\n  Cost: ₹500\n\nAfternoon:\n  Check-out from hotel and depart\n  Cost: ₹500\n\nEstimated cost for Day 5: ₹1000\n\nImportant Notes:\n  • Check the flight departure time\n  • Leave for the airport at least 2 hours before the flight\n\n---\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Arrival in Goa",
+        "summary": "Arrive at Dabolim Airport and check-in to your hotel, spend the day relaxing on the beach",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check-in to hotel",
+            "duration": null,
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Miramar Beach",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner at a local restaurant",
+            "duration": null,
+            "cost_estimate": "₹800"
+          }
+        ],
+        "cost_estimate": "₹2000",
+        "notes": [
+          "Hire a taxi from the airport to the hotel",
+          "Check the hotel reviews before booking"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "North Goa Tour",
+        "summary": "Explore the popular beaches and attractions in North Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Fort Aguada",
+            "duration": null,
+            "cost_estimate": "₹50"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Relax on Calangute Beach",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner and shopping at Baga Beach",
+            "duration": null,
+            "cost_estimate": "₹1000"
+          }
+        ],
+        "cost_estimate": "₹1500",
+        "notes": [
+          "Rent a scooter to travel around North Goa",
+          "Bargain while shopping at the local markets"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "South Goa Tour",
+        "summary": "Visit the beautiful beaches and attractions in South Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Colva Beach",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Relax on Benaulim Beach",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner at a local restaurant",
+            "duration": null,
+            "cost_estimate": "₹800"
+          }
+        ],
+        "cost_estimate": "₹1200",
+        "notes": [
+          "Take a taxi or bus to travel to South Goa",
+          "Try the local seafood"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Water Sports and Activities",
+        "summary": "Enjoy various water sports and activities in Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Parasailing at Baga Beach",
+            "duration": null,
+            "cost_estimate": "₹1000"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Snorkeling at Grande Island",
+            "duration": null,
+            "cost_estimate": "₹1500"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner and relaxation",
+            "duration": null,
+            "cost_estimate": "₹800"
+          }
+        ],
+        "cost_estimate": "₹3500",
+        "notes": [
+          "Book the water sports in advance",
+          "Follow the safety instructions carefully"
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Departure from Goa",
+        "summary": "Spend the morning shopping for souvenirs and depart from Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Shopping for souvenirs",
+            "duration": null,
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Check-out from hotel and depart",
+            "duration": null,
+            "cost_estimate": "₹500"
+          }
+        ],
+        "cost_estimate": "₹1000",
+        "notes": [
+          "Check the flight departure time",
+          "Leave for the airport at least 2 hours before the flight"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "Weather retrieved (summary unavailable)",
+      "days": [
+        {
+          "date": "2025-12-01",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        },
+        {
+          "date": "2025-12-02",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        },
+        {
+          "date": "2025-12-03",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        },
+        {
+          "date": "2025-12-04",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        },
+        {
+          "date": "2025-12-05",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-12-01 07:10:00",
+        "price": "98.97 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-12-01 18:10:00",
+        "price": "98.97 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-12-01 21:35:00",
+        "price": "111.57 EUR",
+        "duration": "2H45M"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Goa",
+        "area": "Premium Zone",
+        "rating": "4.8★",
+        "price_per_night": "₹8135",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Goa",
+        "area": "City Center",
+        "rating": "4.4★",
+        "price_per_night": "₹3535",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Goa",
+        "area": "Downtown",
+        "rating": "4.1★",
+        "price_per_night": "₹2617",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Goa",
+        "area": "Tourist District",
+        "rating": "3.9★",
+        "price_per_night": "₹2076",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Goa",
+        "area": "Near Station",
+        "rating": "3.8★",
+        "price_per_night": "₹812",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "9655626c-7159-4444-908a-afd0b6315160"
+  },
+  {
+    "id": 1764012036321,
+    "title": "plan a 3 day trip to odisha",
+    "createdAt": 1764012036321,
+    "prompt": "plan a 3 day trip to odisha",
+    "origin": "Delhi",
+    "start_date": "2025-12-02",
+    "end_date": "2025-12-05",
+    "itinerary": "TRIP ITINERARY\n\nDuration: 4 Days\n\nDay 1 — Arrival in Bhubaneswar\n\nArrive at Biju Patnaik International Airport and check into your hotel\n\nMorning:\n  Check into hotel\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Visit Nandankanan Zoological Park\n  Duration: 4 hours\n  Cost: ₹200\n\nEvening:\n  Explore local market\n  Duration: 3 hours\n  Cost: ₹300\n\nEstimated cost for Day 1: ₹2000\n\nImportant Notes:\n  • Tip: Hire a taxi from the airport to the hotel\n\n---\n\nDay 2 — Bhubaneswar Sightseeing\n\nExplore the city of Bhubaneswar and its famous temples\n\nMorning:\n  Visit Lingaraj Temple\n  Duration: 2 hours\n  Cost: ₹100\n\nAfternoon:\n  Visit Mukteshwar Temple\n  Duration: 2 hours\n  Cost: ₹100\n\nEvening:\n  Visit Dhauli Hills\n  Duration: 3 hours\n  Cost: ₹250\n\nEstimated cost for Day 2: ₹1500\n\nImportant Notes:\n  • Tip: Wear comfortable shoes for temple visits\n\n---\n\nDay 3 — Puri Sightseeing\n\nVisit the famous Jagannath Temple and Puri Beach\n\nMorning:\n  Visit Jagannath Temple\n  Duration: 3 hours\n  Cost: ₹200\n\nAfternoon:\n  Relax at Puri Beach\n  Duration: 4 hours\n  Cost: ₹0\n\nEvening:\n  Explore local market\n  Duration: 3 hours\n  Cost: ₹300\n\nEstimated cost for Day 3: ₹1200\n\nImportant Notes:\n  • Tip: Try the local seafood at Puri Beach\n\n---\n\nDay 4 — Departure from Bhubaneswar\n\nCheck out of the hotel and depart from Biju Patnaik International Airport\n\nMorning:\n  Check out of hotel\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Visit local market for last minute shopping\n  Duration: 3 hours\n  Cost: ₹300\n\nEvening:\n  Depart from Biju Patnaik International Airport\n  Duration: 2 hours\n  Cost: ₹500\n\nEstimated cost for Day 4: ₹1300\n\nImportant Notes:\n  • Tip: Check with the hotel for any additional charges\n\n---\n",
+    "itinerary_text": "TRIP ITINERARY\n\nDuration: 4 Days\n\nDay 1 — Arrival in Bhubaneswar\n\nArrive at Biju Patnaik International Airport and check into your hotel\n\nMorning:\n  Check into hotel\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Visit Nandankanan Zoological Park\n  Duration: 4 hours\n  Cost: ₹200\n\nEvening:\n  Explore local market\n  Duration: 3 hours\n  Cost: ₹300\n\nEstimated cost for Day 1: ₹2000\n\nImportant Notes:\n  • Tip: Hire a taxi from the airport to the hotel\n\n---\n\nDay 2 — Bhubaneswar Sightseeing\n\nExplore the city of Bhubaneswar and its famous temples\n\nMorning:\n  Visit Lingaraj Temple\n  Duration: 2 hours\n  Cost: ₹100\n\nAfternoon:\n  Visit Mukteshwar Temple\n  Duration: 2 hours\n  Cost: ₹100\n\nEvening:\n  Visit Dhauli Hills\n  Duration: 3 hours\n  Cost: ₹250\n\nEstimated cost for Day 2: ₹1500\n\nImportant Notes:\n  • Tip: Wear comfortable shoes for temple visits\n\n---\n\nDay 3 — Puri Sightseeing\n\nVisit the famous Jagannath Temple and Puri Beach\n\nMorning:\n  Visit Jagannath Temple\n  Duration: 3 hours\n  Cost: ₹200\n\nAfternoon:\n  Relax at Puri Beach\n  Duration: 4 hours\n  Cost: ₹0\n\nEvening:\n  Explore local market\n  Duration: 3 hours\n  Cost: ₹300\n\nEstimated cost for Day 3: ₹1200\n\nImportant Notes:\n  • Tip: Try the local seafood at Puri Beach\n\n---\n\nDay 4 — Departure from Bhubaneswar\n\nCheck out of the hotel and depart from Biju Patnaik International Airport\n\nMorning:\n  Check out of hotel\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Visit local market for last minute shopping\n  Duration: 3 hours\n  Cost: ₹300\n\nEvening:\n  Depart from Biju Patnaik International Airport\n  Duration: 2 hours\n  Cost: ₹500\n\nEstimated cost for Day 4: ₹1300\n\nImportant Notes:\n  • Tip: Check with the hotel for any additional charges\n\n---\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Arrival in Bhubaneswar",
+        "summary": "Arrive at Biju Patnaik International Airport and check into your hotel",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check into hotel",
+            "duration": "2 hours",
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Nandankanan Zoological Park",
+            "duration": "4 hours",
+            "cost_estimate": "₹200"
+          },
+          {
+            "period": "Evening",
+            "activity": "Explore local market",
+            "duration": "3 hours",
+            "cost_estimate": "₹300"
+          }
+        ],
+        "cost_estimate": "₹2000",
+        "notes": [
+          "Tip: Hire a taxi from the airport to the hotel"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Bhubaneswar Sightseeing",
+        "summary": "Explore the city of Bhubaneswar and its famous temples",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Lingaraj Temple",
+            "duration": "2 hours",
+            "cost_estimate": "₹100"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Mukteshwar Temple",
+            "duration": "2 hours",
+            "cost_estimate": "₹100"
+          },
+          {
+            "period": "Evening",
+            "activity": "Visit Dhauli Hills",
+            "duration": "3 hours",
+            "cost_estimate": "₹250"
+          }
+        ],
+        "cost_estimate": "₹1500",
+        "notes": [
+          "Tip: Wear comfortable shoes for temple visits"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Puri Sightseeing",
+        "summary": "Visit the famous Jagannath Temple and Puri Beach",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Jagannath Temple",
+            "duration": "3 hours",
+            "cost_estimate": "₹200"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Relax at Puri Beach",
+            "duration": "4 hours",
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Explore local market",
+            "duration": "3 hours",
+            "cost_estimate": "₹300"
+          }
+        ],
+        "cost_estimate": "₹1200",
+        "notes": [
+          "Tip: Try the local seafood at Puri Beach"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Departure from Bhubaneswar",
+        "summary": "Check out of the hotel and depart from Biju Patnaik International Airport",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check out of hotel",
+            "duration": "2 hours",
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit local market for last minute shopping",
+            "duration": "3 hours",
+            "cost_estimate": "₹300"
+          },
+          {
+            "period": "Evening",
+            "activity": "Depart from Biju Patnaik International Airport",
+            "duration": "2 hours",
+            "cost_estimate": "₹500"
+          }
+        ],
+        "cost_estimate": "₹1300",
+        "notes": [
+          "Tip: Check with the hotel for any additional charges"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "Weather retrieved (summary unavailable)",
+      "days": [
+        {
+          "date": "2025-12-02",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        },
+        {
+          "date": "2025-12-03",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        },
+        {
+          "date": "2025-12-04",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        },
+        {
+          "date": "2025-12-05",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "BOM",
+        "depart": "2025-12-02 17:15:00",
+        "price": "95.68 EUR",
+        "duration": "2H5M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "BOM",
+        "depart": "2025-12-02 07:00:00",
+        "price": "95.68 EUR",
+        "duration": "2H15M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "BOM",
+        "depart": "2025-12-02 13:15:00",
+        "price": "95.68 EUR",
+        "duration": "2H15M"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Mumbai",
+        "area": "Premium Zone",
+        "rating": "4.8★",
+        "price_per_night": "₹11103",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Mumbai",
+        "area": "City Center",
+        "rating": "4.4★",
+        "price_per_night": "₹5597",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Mumbai",
+        "area": "Downtown",
+        "rating": "4.1★",
+        "price_per_night": "₹2706",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Mumbai",
+        "area": "Near Station",
+        "rating": "4.0★",
+        "price_per_night": "₹1084",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Mumbai",
+        "area": "Tourist District",
+        "rating": "3.8★",
+        "price_per_night": "₹2023",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "96b27059-e88d-4e3a-b77e-0860073f5d4b"
+  },
+  {
+    "id": 1764009550813,
+    "title": "plan a 4 day trip to Goa",
+    "createdAt": 1764009550813,
+    "prompt": "plan a 4 day trip to Goa",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-30",
+    "itinerary": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Arrival in Goa\n\nArrive at Dabolim airport and check into your hotel in North Goa\n\nMorning:\n  Check into hotel\n  Cost: ₹500\n\nAfternoon:\n  Visit Calangute beach\n  Cost: ₹0\n\nEvening:\n  Dinner at a local restaurant\n  Cost: ₹800\n\nEstimated cost for Day 1: ₹1300\n\nImportant Notes:\n  • Book hotel in advance to avoid high prices\n\n---\n\nDay 2 — North Goa Tour\n\nExplore the popular beaches and attractions in North Goa\n\nMorning:\n  Visit Baga beach\n  Cost: ₹0\n\nAfternoon:\n  Lunch at a shack\n  Cost: ₹500\n\nEvening:\n  Cruise on the Mandovi river\n  Cost: ₹1000\n\nEstimated cost for Day 2: ₹1500\n\nImportant Notes:\n  • Be careful while swimming in the sea\n\n---\n\nDay 3 — South Goa Tour\n\nVisit the scenic beaches and attractions in South Goa\n\nMorning:\n  Visit Colva beach\n  Cost: ₹0\n\nAfternoon:\n  Lunch at a local restaurant\n  Cost: ₹500\n\nEvening:\n  Dinner at a seafood restaurant\n  Cost: ₹1200\n\nEstimated cost for Day 3: ₹1700\n\nImportant Notes:\n  • Try the local seafood dishes\n\n---\n\nDay 4 — Water Activities\n\nEnjoy various water activities in Goa\n\nMorning:\n  Parasailing at Calangute beach\n  Cost: ₹1000\n\nAfternoon:\n  Snorkeling at Baga beach\n  Cost: ₹1500\n\nEvening:\n  Relax at the hotel\n  Cost: ₹0\n\nEstimated cost for Day 4: ₹2500\n\nImportant Notes:\n  • Check the safety equipment before participating in water activities\n\n---\n\nDay 5 — Departure\n\nCheck out of the hotel and depart from Goa\n\nMorning:\n  Check out of the hotel\n  Cost: ₹0\n\nAfternoon:\n  Depart from Dabolim airport\n  Cost: ₹500\n\nEstimated cost for Day 5: ₹500\n\nImportant Notes:\n  • Check the flight schedule in advance\n\n---\n",
+    "itinerary_text": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Arrival in Goa\n\nArrive at Dabolim airport and check into your hotel in North Goa\n\nMorning:\n  Check into hotel\n  Cost: ₹500\n\nAfternoon:\n  Visit Calangute beach\n  Cost: ₹0\n\nEvening:\n  Dinner at a local restaurant\n  Cost: ₹800\n\nEstimated cost for Day 1: ₹1300\n\nImportant Notes:\n  • Book hotel in advance to avoid high prices\n\n---\n\nDay 2 — North Goa Tour\n\nExplore the popular beaches and attractions in North Goa\n\nMorning:\n  Visit Baga beach\n  Cost: ₹0\n\nAfternoon:\n  Lunch at a shack\n  Cost: ₹500\n\nEvening:\n  Cruise on the Mandovi river\n  Cost: ₹1000\n\nEstimated cost for Day 2: ₹1500\n\nImportant Notes:\n  • Be careful while swimming in the sea\n\n---\n\nDay 3 — South Goa Tour\n\nVisit the scenic beaches and attractions in South Goa\n\nMorning:\n  Visit Colva beach\n  Cost: ₹0\n\nAfternoon:\n  Lunch at a local restaurant\n  Cost: ₹500\n\nEvening:\n  Dinner at a seafood restaurant\n  Cost: ₹1200\n\nEstimated cost for Day 3: ₹1700\n\nImportant Notes:\n  • Try the local seafood dishes\n\n---\n\nDay 4 — Water Activities\n\nEnjoy various water activities in Goa\n\nMorning:\n  Parasailing at Calangute beach\n  Cost: ₹1000\n\nAfternoon:\n  Snorkeling at Baga beach\n  Cost: ₹1500\n\nEvening:\n  Relax at the hotel\n  Cost: ₹0\n\nEstimated cost for Day 4: ₹2500\n\nImportant Notes:\n  • Check the safety equipment before participating in water activities\n\n---\n\nDay 5 — Departure\n\nCheck out of the hotel and depart from Goa\n\nMorning:\n  Check out of the hotel\n  Cost: ₹0\n\nAfternoon:\n  Depart from Dabolim airport\n  Cost: ₹500\n\nEstimated cost for Day 5: ₹500\n\nImportant Notes:\n  • Check the flight schedule in advance\n\n---\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Arrival in Goa",
+        "summary": "Arrive at Dabolim airport and check into your hotel in North Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check into hotel",
+            "duration": null,
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Calangute beach",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner at a local restaurant",
+            "duration": null,
+            "cost_estimate": "₹800"
+          }
+        ],
+        "cost_estimate": "₹1300",
+        "notes": [
+          "Book hotel in advance to avoid high prices"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "North Goa Tour",
+        "summary": "Explore the popular beaches and attractions in North Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Baga beach",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Lunch at a shack",
+            "duration": null,
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Evening",
+            "activity": "Cruise on the Mandovi river",
+            "duration": null,
+            "cost_estimate": "₹1000"
+          }
+        ],
+        "cost_estimate": "₹1500",
+        "notes": [
+          "Be careful while swimming in the sea"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "South Goa Tour",
+        "summary": "Visit the scenic beaches and attractions in South Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Visit Colva beach",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Lunch at a local restaurant",
+            "duration": null,
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner at a seafood restaurant",
+            "duration": null,
+            "cost_estimate": "₹1200"
+          }
+        ],
+        "cost_estimate": "₹1700",
+        "notes": [
+          "Try the local seafood dishes"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Water Activities",
+        "summary": "Enjoy various water activities in Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Parasailing at Calangute beach",
+            "duration": null,
+            "cost_estimate": "₹1000"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Snorkeling at Baga beach",
+            "duration": null,
+            "cost_estimate": "₹1500"
+          },
+          {
+            "period": "Evening",
+            "activity": "Relax at the hotel",
+            "duration": null,
+            "cost_estimate": "₹0"
+          }
+        ],
+        "cost_estimate": "₹2500",
+        "notes": [
+          "Check the safety equipment before participating in water activities"
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Departure",
+        "summary": "Check out of the hotel and depart from Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check out of the hotel",
+            "duration": null,
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Depart from Dabolim airport",
+            "duration": null,
+            "cost_estimate": "₹500"
+          }
+        ],
+        "cost_estimate": "₹500",
+        "notes": [
+          "Check the flight schedule in advance"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "25.3°C, Clouds, 53% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 25.3,
+          "temp_min": 20,
+          "temp_max": 33.8,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 25,
+          "temp_min": 19.4,
+          "temp_max": 33.6,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 24,
+          "temp_min": 19.6,
+          "temp_max": 31.4,
+          "icon": "Clouds",
+          "humidity": 54
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 24.2,
+          "temp_min": 18.6,
+          "temp_max": 32.5,
+          "icon": "Clouds",
+          "humidity": 46
+        },
+        {
+          "date": "2025-11-30",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 18:10:00",
+        "price": "67.47 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 07:10:00",
+        "price": "84.27 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 21:50:00",
+        "price": "105.97 EUR",
+        "duration": "22H"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Goa",
+        "area": "Premium Zone",
+        "rating": "4.9★",
+        "price_per_night": "₹6935",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Goa",
+        "area": "City Center",
+        "rating": "4.7★",
+        "price_per_night": "₹3128",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Goa",
+        "area": "Downtown",
+        "rating": "4.3★",
+        "price_per_night": "₹2591",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Goa",
+        "area": "Near Station",
+        "rating": "4.1★",
+        "price_per_night": "₹729",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Goa",
+        "area": "Tourist District",
+        "rating": "3.8★",
+        "price_per_night": "₹1889",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "49902058-f610-4a0e-9f78-caf7d2beaf57"
+  },
+  {
+    "id": 1764008436491,
+    "title": "Plan a 4-day beach trip to Goa starti...",
+    "createdAt": 1764008436491,
+    "prompt": "Plan a 4-day beach trip to Goa starting from Delhi with good food and nightlife",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-30",
+    "itinerary": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Travel to Goa\n\nTake a flight from Delhi to Goa and check-in to the hotel\n\nMorning:\n  Flight from Delhi to Goa\n  Duration: 2.5 hours\n  Cost: ₹8000\n\nAfternoon:\n  Check-in to hotel and freshen up\n  Duration: 1 hour\n  Cost: ₹0\n\nEvening:\n  Explore nearby beach and have dinner\n  Duration: 3 hours\n  Cost: ₹1500\n\nEstimated cost for Day 1: ₹9500\n\nImportant Notes:\n  • Book flight tickets in advance\n  • Check hotel reviews before booking\n\n---\n\nDay 2 — Beach Day\n\nSpend the day at Calangute beach and enjoy water sports\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹500\n\nAfternoon:\n  Water sports at Calangute beach\n  Duration: 3 hours\n  Cost: ₹2000\n\nEvening:\n  Dinner at a beach shack\n  Duration: 2 hours\n  Cost: ₹1200\n\nEstimated cost for Day 2: ₹3700\n\nImportant Notes:\n  • Try parasailing and jet skiing\n  • Bargain for water sports prices\n\n---\n\nDay 3 — Nightlife\n\nExplore the nightlife of Goa and visit popular clubs\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹500\n\nAfternoon:\n  Lunch and relaxation\n  Duration: 3 hours\n  Cost: ₹800\n\nEvening:\n  Visit popular clubs and bars\n  Duration: 4 hours\n  Cost: ₹2500\n\nEstimated cost for Day 3: ₹3800\n\nImportant Notes:\n  • Dress according to club rules\n  • Drink responsibly\n\n---\n\nDay 4 — South Goa Tour\n\nVisit the beaches and attractions of South Goa\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹500\n\nAfternoon:\n  Visit Palolem and Agonda beaches\n  Duration: 4 hours\n  Cost: ₹1500\n\nEvening:\n  Dinner at a local restaurant\n  Duration: 2 hours\n  Cost: ₹1000\n\nEstimated cost for Day 4: ₹3000\n\nImportant Notes:\n  • Try local seafood\n  • Respect local culture\n\n---\n\nDay 5 — Return to Delhi\n\nCheck-out of hotel and take a flight back to Delhi\n\nMorning:\n  Check-out of hotel\n  Duration: 1 hour\n  Cost: ₹0\n\nAfternoon:\n  Flight from Goa to Delhi\n  Duration: 2.5 hours\n  Cost: ₹8000\n\nEvening:\n  Reach Delhi and head home\n  Duration: 1 hour\n  Cost: ₹500\n\nEstimated cost for Day 5: ₹8500\n\nImportant Notes:\n  • Check-out of hotel on time\n  • Book flight tickets in advance\n\n---\n",
+    "itinerary_text": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Travel to Goa\n\nTake a flight from Delhi to Goa and check-in to the hotel\n\nMorning:\n  Flight from Delhi to Goa\n  Duration: 2.5 hours\n  Cost: ₹8000\n\nAfternoon:\n  Check-in to hotel and freshen up\n  Duration: 1 hour\n  Cost: ₹0\n\nEvening:\n  Explore nearby beach and have dinner\n  Duration: 3 hours\n  Cost: ₹1500\n\nEstimated cost for Day 1: ₹9500\n\nImportant Notes:\n  • Book flight tickets in advance\n  • Check hotel reviews before booking\n\n---\n\nDay 2 — Beach Day\n\nSpend the day at Calangute beach and enjoy water sports\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹500\n\nAfternoon:\n  Water sports at Calangute beach\n  Duration: 3 hours\n  Cost: ₹2000\n\nEvening:\n  Dinner at a beach shack\n  Duration: 2 hours\n  Cost: ₹1200\n\nEstimated cost for Day 2: ₹3700\n\nImportant Notes:\n  • Try parasailing and jet skiing\n  • Bargain for water sports prices\n\n---\n\nDay 3 — Nightlife\n\nExplore the nightlife of Goa and visit popular clubs\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹500\n\nAfternoon:\n  Lunch and relaxation\n  Duration: 3 hours\n  Cost: ₹800\n\nEvening:\n  Visit popular clubs and bars\n  Duration: 4 hours\n  Cost: ₹2500\n\nEstimated cost for Day 3: ₹3800\n\nImportant Notes:\n  • Dress according to club rules\n  • Drink responsibly\n\n---\n\nDay 4 — South Goa Tour\n\nVisit the beaches and attractions of South Goa\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹500\n\nAfternoon:\n  Visit Palolem and Agonda beaches\n  Duration: 4 hours\n  Cost: ₹1500\n\nEvening:\n  Dinner at a local restaurant\n  Duration: 2 hours\n  Cost: ₹1000\n\nEstimated cost for Day 4: ₹3000\n\nImportant Notes:\n  • Try local seafood\n  • Respect local culture\n\n---\n\nDay 5 — Return to Delhi\n\nCheck-out of hotel and take a flight back to Delhi\n\nMorning:\n  Check-out of hotel\n  Duration: 1 hour\n  Cost: ₹0\n\nAfternoon:\n  Flight from Goa to Delhi\n  Duration: 2.5 hours\n  Cost: ₹8000\n\nEvening:\n  Reach Delhi and head home\n  Duration: 1 hour\n  Cost: ₹500\n\nEstimated cost for Day 5: ₹8500\n\nImportant Notes:\n  • Check-out of hotel on time\n  • Book flight tickets in advance\n\n---\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Travel to Goa",
+        "summary": "Take a flight from Delhi to Goa and check-in to the hotel",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Flight from Delhi to Goa",
+            "duration": "2.5 hours",
+            "cost_estimate": "₹8000"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Check-in to hotel and freshen up",
+            "duration": "1 hour",
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Explore nearby beach and have dinner",
+            "duration": "3 hours",
+            "cost_estimate": "₹1500"
+          }
+        ],
+        "cost_estimate": "₹9500",
+        "notes": [
+          "Book flight tickets in advance",
+          "Check hotel reviews before booking"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Beach Day",
+        "summary": "Spend the day at Calangute beach and enjoy water sports",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Breakfast at hotel",
+            "duration": "1 hour",
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Water sports at Calangute beach",
+            "duration": "3 hours",
+            "cost_estimate": "₹2000"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner at a beach shack",
+            "duration": "2 hours",
+            "cost_estimate": "₹1200"
+          }
+        ],
+        "cost_estimate": "₹3700",
+        "notes": [
+          "Try parasailing and jet skiing",
+          "Bargain for water sports prices"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Nightlife",
+        "summary": "Explore the nightlife of Goa and visit popular clubs",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Breakfast at hotel",
+            "duration": "1 hour",
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Lunch and relaxation",
+            "duration": "3 hours",
+            "cost_estimate": "₹800"
+          },
+          {
+            "period": "Evening",
+            "activity": "Visit popular clubs and bars",
+            "duration": "4 hours",
+            "cost_estimate": "₹2500"
+          }
+        ],
+        "cost_estimate": "₹3800",
+        "notes": [
+          "Dress according to club rules",
+          "Drink responsibly"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "South Goa Tour",
+        "summary": "Visit the beaches and attractions of South Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Breakfast at hotel",
+            "duration": "1 hour",
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Palolem and Agonda beaches",
+            "duration": "4 hours",
+            "cost_estimate": "₹1500"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner at a local restaurant",
+            "duration": "2 hours",
+            "cost_estimate": "₹1000"
+          }
+        ],
+        "cost_estimate": "₹3000",
+        "notes": [
+          "Try local seafood",
+          "Respect local culture"
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Return to Delhi",
+        "summary": "Check-out of hotel and take a flight back to Delhi",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check-out of hotel",
+            "duration": "1 hour",
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Flight from Goa to Delhi",
+            "duration": "2.5 hours",
+            "cost_estimate": "₹8000"
+          },
+          {
+            "period": "Evening",
+            "activity": "Reach Delhi and head home",
+            "duration": "1 hour",
+            "cost_estimate": "₹500"
+          }
+        ],
+        "cost_estimate": "₹8500",
+        "notes": [
+          "Check-out of hotel on time",
+          "Book flight tickets in advance"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "25.3°C, Clouds, 53% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 25.3,
+          "temp_min": 20,
+          "temp_max": 33.8,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 25,
+          "temp_min": 19.4,
+          "temp_max": 33.6,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 24,
+          "temp_min": 19.6,
+          "temp_max": 31.4,
+          "icon": "Clouds",
+          "humidity": 54
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 24.2,
+          "temp_min": 18.6,
+          "temp_max": 32.5,
+          "icon": "Clouds",
+          "humidity": 46
+        },
+        {
+          "date": "2025-11-30",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 18:10:00",
+        "price": "67.47 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 07:10:00",
+        "price": "84.27 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 21:50:00",
+        "price": "105.97 EUR",
+        "duration": "22H"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Goa",
+        "area": "Premium Zone",
+        "rating": "4.9★",
+        "price_per_night": "₹7469",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Goa",
+        "area": "City Center",
+        "rating": "4.6★",
+        "price_per_night": "₹4104",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Goa",
+        "area": "Downtown",
+        "rating": "4.2★",
+        "price_per_night": "₹2677",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Goa",
+        "area": "Tourist District",
+        "rating": "3.9★",
+        "price_per_night": "₹1821",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Goa",
+        "area": "Near Station",
+        "rating": "3.9★",
+        "price_per_night": "₹902",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "2d05c98c-7b7b-45fb-84f3-958137d5a5c0"
+  },
+  {
+    "id": 1763996365850,
+    "title": "Plan a 4-day beach trip to Goa starti...",
+    "createdAt": 1763996365850,
+    "prompt": "Plan a 4-day beach trip to Goa starting from Delhi with good food and nightlife",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-30",
+    "itinerary": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Travel to Goa\n\nStart your journey from Delhi to Goa\n\nMorning:\n  Check out from Delhi hotel and head to airport\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Flight from Delhi to Goa\n  Duration: 2.5 hours\n  Cost: ₹8000\n\nEstimated cost for Day 1: ₹8500\n\nImportant Notes:\n  • Check flight status before travel\n  • Pack necessary documents\n\n---\n\nDay 2 — Beach Relaxation\n\nEnjoy the beautiful beaches of Goa\n\nMorning:\n  Check in to hotel and breakfast\n  Duration: 1 hour\n  Cost: ₹300\n\nAfternoon:\n  Visit Calangute beach\n  Duration: 4 hours\n  Cost: ₹0\n\nEvening:\n  Dinner at a beachside restaurant\n  Duration: 2 hours\n  Cost: ₹800\n\nEstimated cost for Day 2: ₹2100\n\nImportant Notes:\n  • Apply sunscreen\n  • Try water sports\n\n---\n\nDay 3 — Nightlife and Food\n\nExperience the vibrant nightlife of Goa\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹200\n\nAfternoon:\n  Visit Anjuna beach\n  Duration: 4 hours\n  Cost: ₹0\n\nEvening:\n  Dinner and party at a nightclub\n  Duration: 4 hours\n  Cost: ₹1500\n\nEstimated cost for Day 3: ₹1900\n\nImportant Notes:\n  • Dress appropriately for the club\n  • Drink responsibly\n\n---\n\nDay 4 — Water Activities\n\nEnjoy various water activities in Goa\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹200\n\nAfternoon:\n  Try snorkeling or scuba diving\n  Duration: 3 hours\n  Cost: ₹2500\n\nEvening:\n  Sunset cruise\n  Duration: 2 hours\n  Cost: ₹1000\n\nEstimated cost for Day 4: ₹3700\n\nImportant Notes:\n  • Follow instructions of the instructor\n  • Wear a life jacket\n\n---\n\nDay 5 — Return to Delhi\n\nEnd of the trip and return to Delhi\n\nMorning:\n  Check out from hotel and head to airport\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Flight from Goa to Delhi\n  Duration: 2.5 hours\n  Cost: ₹8000\n\nEstimated cost for Day 5: ₹8500\n\nImportant Notes:\n  • Check flight status before travel\n  • Keep all belongings safe\n\n---\n",
+    "itinerary_text": "TRIP ITINERARY\n\nDuration: 5 Days\n\nDay 1 — Travel to Goa\n\nStart your journey from Delhi to Goa\n\nMorning:\n  Check out from Delhi hotel and head to airport\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Flight from Delhi to Goa\n  Duration: 2.5 hours\n  Cost: ₹8000\n\nEstimated cost for Day 1: ₹8500\n\nImportant Notes:\n  • Check flight status before travel\n  • Pack necessary documents\n\n---\n\nDay 2 — Beach Relaxation\n\nEnjoy the beautiful beaches of Goa\n\nMorning:\n  Check in to hotel and breakfast\n  Duration: 1 hour\n  Cost: ₹300\n\nAfternoon:\n  Visit Calangute beach\n  Duration: 4 hours\n  Cost: ₹0\n\nEvening:\n  Dinner at a beachside restaurant\n  Duration: 2 hours\n  Cost: ₹800\n\nEstimated cost for Day 2: ₹2100\n\nImportant Notes:\n  • Apply sunscreen\n  • Try water sports\n\n---\n\nDay 3 — Nightlife and Food\n\nExperience the vibrant nightlife of Goa\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹200\n\nAfternoon:\n  Visit Anjuna beach\n  Duration: 4 hours\n  Cost: ₹0\n\nEvening:\n  Dinner and party at a nightclub\n  Duration: 4 hours\n  Cost: ₹1500\n\nEstimated cost for Day 3: ₹1900\n\nImportant Notes:\n  • Dress appropriately for the club\n  • Drink responsibly\n\n---\n\nDay 4 — Water Activities\n\nEnjoy various water activities in Goa\n\nMorning:\n  Breakfast at hotel\n  Duration: 1 hour\n  Cost: ₹200\n\nAfternoon:\n  Try snorkeling or scuba diving\n  Duration: 3 hours\n  Cost: ₹2500\n\nEvening:\n  Sunset cruise\n  Duration: 2 hours\n  Cost: ₹1000\n\nEstimated cost for Day 4: ₹3700\n\nImportant Notes:\n  • Follow instructions of the instructor\n  • Wear a life jacket\n\n---\n\nDay 5 — Return to Delhi\n\nEnd of the trip and return to Delhi\n\nMorning:\n  Check out from hotel and head to airport\n  Duration: 2 hours\n  Cost: ₹500\n\nAfternoon:\n  Flight from Goa to Delhi\n  Duration: 2.5 hours\n  Cost: ₹8000\n\nEstimated cost for Day 5: ₹8500\n\nImportant Notes:\n  • Check flight status before travel\n  • Keep all belongings safe\n\n---\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Travel to Goa",
+        "summary": "Start your journey from Delhi to Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check out from Delhi hotel and head to airport",
+            "duration": "2 hours",
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Flight from Delhi to Goa",
+            "duration": "2.5 hours",
+            "cost_estimate": "₹8000"
+          }
+        ],
+        "cost_estimate": "₹8500",
+        "notes": [
+          "Check flight status before travel",
+          "Pack necessary documents"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Beach Relaxation",
+        "summary": "Enjoy the beautiful beaches of Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check in to hotel and breakfast",
+            "duration": "1 hour",
+            "cost_estimate": "₹300"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Calangute beach",
+            "duration": "4 hours",
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner at a beachside restaurant",
+            "duration": "2 hours",
+            "cost_estimate": "₹800"
+          }
+        ],
+        "cost_estimate": "₹2100",
+        "notes": [
+          "Apply sunscreen",
+          "Try water sports"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Nightlife and Food",
+        "summary": "Experience the vibrant nightlife of Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Breakfast at hotel",
+            "duration": "1 hour",
+            "cost_estimate": "₹200"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Visit Anjuna beach",
+            "duration": "4 hours",
+            "cost_estimate": "₹0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner and party at a nightclub",
+            "duration": "4 hours",
+            "cost_estimate": "₹1500"
+          }
+        ],
+        "cost_estimate": "₹1900",
+        "notes": [
+          "Dress appropriately for the club",
+          "Drink responsibly"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Water Activities",
+        "summary": "Enjoy various water activities in Goa",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Breakfast at hotel",
+            "duration": "1 hour",
+            "cost_estimate": "₹200"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Try snorkeling or scuba diving",
+            "duration": "3 hours",
+            "cost_estimate": "₹2500"
+          },
+          {
+            "period": "Evening",
+            "activity": "Sunset cruise",
+            "duration": "2 hours",
+            "cost_estimate": "₹1000"
+          }
+        ],
+        "cost_estimate": "₹3700",
+        "notes": [
+          "Follow instructions of the instructor",
+          "Wear a life jacket"
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Return to Delhi",
+        "summary": "End of the trip and return to Delhi",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check out from hotel and head to airport",
+            "duration": "2 hours",
+            "cost_estimate": "₹500"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Flight from Goa to Delhi",
+            "duration": "2.5 hours",
+            "cost_estimate": "₹8000"
+          }
+        ],
+        "cost_estimate": "₹8500",
+        "notes": [
+          "Check flight status before travel",
+          "Keep all belongings safe"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "25.3°C, Clouds, 53% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 25.3,
+          "temp_min": 20,
+          "temp_max": 33.8,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 25,
+          "temp_min": 19.4,
+          "temp_max": 33.6,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 24,
+          "temp_min": 19.6,
+          "temp_max": 31.4,
+          "icon": "Clouds",
+          "humidity": 54
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 25.6,
+          "temp_min": 18.6,
+          "temp_max": 32.5,
+          "icon": "Clouds",
+          "humidity": 42
+        },
+        {
+          "date": "2025-11-30",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 18:10:00",
+        "price": "67.47 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 07:10:00",
+        "price": "84.27 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 21:50:00",
+        "price": "105.97 EUR",
+        "duration": "22H"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Goa",
+        "area": "Premium Zone",
+        "rating": "4.9★",
+        "price_per_night": "₹8808",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Goa",
+        "area": "City Center",
+        "rating": "4.5★",
+        "price_per_night": "₹2946",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Goa",
+        "area": "Downtown",
+        "rating": "4.0★",
+        "price_per_night": "₹3285",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Goa",
+        "area": "Near Station",
+        "rating": "3.9★",
+        "price_per_night": "₹879",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Goa",
+        "area": "Tourist District",
+        "rating": "3.8★",
+        "price_per_night": "₹2033",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "74462d89-de23-458d-8d1c-3f15553401a1"
+  },
+  {
+    "id": 1763995914354,
+    "title": "Plan a 4-day beach trip to Goa starti...",
+    "createdAt": 1763995914354,
+    "prompt": "Plan a 4-day beach trip to Goa starting from Delhi with good food and nightlife",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-28",
+    "itinerary": "",
+    "itinerary_text": "",
+    "itineraryRich": [],
+    "weather": {
+      "summary": "25.3°C, Clouds, 53% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 25.3,
+          "temp_min": 20,
+          "temp_max": 33.8,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 25,
+          "temp_min": 19.4,
+          "temp_max": 33.6,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 24,
+          "temp_min": 19.6,
+          "temp_max": 31.4,
+          "icon": "Clouds",
+          "humidity": 54
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 18:10:00",
+        "price": "67.47 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 07:10:00",
+        "price": "84.27 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 21:50:00",
+        "price": "105.97 EUR",
+        "duration": "22H"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "The Grand Goa",
+        "area": "City Center",
+        "rating": "4.7★",
+        "price_per_night": "₹3132",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Luxury Palace Goa",
+        "area": "Premium Zone",
+        "rating": "4.7★",
+        "price_per_night": "₹8628",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Goa",
+        "area": "Near Station",
+        "rating": "4.2★",
+        "price_per_night": "₹856",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Comfort Stay Goa",
+        "area": "Downtown",
+        "rating": "4.0★",
+        "price_per_night": "₹2614",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Goa",
+        "area": "Tourist District",
+        "rating": "3.8★",
+        "price_per_night": "₹1979",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "ad4be4b7-9305-447b-acd7-224e3fabe16c"
+  },
+  {
+    "id": 1763995239643,
+    "title": "Plan a 4-day beach trip to Goa starti...",
+    "createdAt": 1763995239643,
+    "prompt": "Plan a 4-day beach trip to Goa starting from Delhi with good food and nightlife",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-30",
+    "itinerary": "## Day 1 — Delhi to Goa\nTravel from Delhi to Goa and check-in to hotel\n- **Morning**: Flight from Delhi to Goa\n  [Book Here](https://example.com/flight-booking)\n- **Afternoon**: Check-in to hotel and freshen up\n- **Evening**: Explore local market and try street food\n  *Note: Please carry sunscreen and sunglasses*\n\n## Day 2 — Beach Day\nSpend the day at the beach and enjoy water activities\n- **Morning**: Breakfast at hotel\n- **Afternoon**: Beach activities like swimming, surfing, and sunbathing\n- **Evening**: Dinner at a local restaurant\n  *Note: Please carry beach towel and extra clothes*\n\n## Day 3 — Nightlife\nExplore the nightlife of Goa\n- **Evening**: Dinner at a local restaurant\n- **Night**: Visit a nightclub or bar\n  *Note: Please drink responsibly and plan for transportation in advance*\n\n## Day 4 — Return to Delhi\nCheck-out of hotel and return to Delhi\n- **Morning**: Check-out of hotel\n- **Afternoon**: Flight from Goa to Delhi\n  [Book Here](https://example.com/flight-booking)\n  *Note: Please check-out of hotel on time and reach airport 2 hours before flight*\n",
+    "itinerary_text": "## Day 1 — Delhi to Goa\nTravel from Delhi to Goa and check-in to hotel\n- **Morning**: Flight from Delhi to Goa\n  [Book Here](https://example.com/flight-booking)\n- **Afternoon**: Check-in to hotel and freshen up\n- **Evening**: Explore local market and try street food\n  *Note: Please carry sunscreen and sunglasses*\n\n## Day 2 — Beach Day\nSpend the day at the beach and enjoy water activities\n- **Morning**: Breakfast at hotel\n- **Afternoon**: Beach activities like swimming, surfing, and sunbathing\n- **Evening**: Dinner at a local restaurant\n  *Note: Please carry beach towel and extra clothes*\n\n## Day 3 — Nightlife\nExplore the nightlife of Goa\n- **Evening**: Dinner at a local restaurant\n- **Night**: Visit a nightclub or bar\n  *Note: Please drink responsibly and plan for transportation in advance*\n\n## Day 4 — Return to Delhi\nCheck-out of hotel and return to Delhi\n- **Morning**: Check-out of hotel\n- **Afternoon**: Flight from Goa to Delhi\n  [Book Here](https://example.com/flight-booking)\n  *Note: Please check-out of hotel on time and reach airport 2 hours before flight*\n",
+    "itineraryRich": [
+      {
+        "day": 1,
+        "title": "Delhi to Goa",
+        "summary": "Travel from Delhi to Goa and check-in to hotel",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Flight from Delhi to Goa",
+            "duration": "2.5 hours",
+            "travel_time": "0 hours",
+            "booking_link": "https://example.com/flight-booking",
+            "cost_estimate": "5000"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Check-in to hotel and freshen up",
+            "duration": "1 hour",
+            "travel_time": "0 hours",
+            "booking_link": null,
+            "cost_estimate": "0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Explore local market and try street food",
+            "duration": "2 hours",
+            "travel_time": "0.5 hours",
+            "booking_link": null,
+            "cost_estimate": "500"
+          }
+        ],
+        "cost_estimate": "6000",
+        "notes": [
+          "Please carry sunscreen and sunglasses"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Beach Day",
+        "summary": "Spend the day at the beach and enjoy water activities",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Breakfast at hotel",
+            "duration": "1 hour",
+            "travel_time": "0 hours",
+            "booking_link": null,
+            "cost_estimate": "200"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Beach activities like swimming, surfing, and sunbathing",
+            "duration": "4 hours",
+            "travel_time": "0.5 hours",
+            "booking_link": null,
+            "cost_estimate": "0"
+          },
+          {
+            "period": "Evening",
+            "activity": "Dinner at a local restaurant",
+            "duration": "2 hours",
+            "travel_time": "0.5 hours",
+            "booking_link": null,
+            "cost_estimate": "800"
+          }
+        ],
+        "cost_estimate": "1000",
+        "notes": [
+          "Please carry beach towel and extra clothes"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Nightlife",
+        "summary": "Explore the nightlife of Goa",
+        "schedule": [
+          {
+            "period": "Evening",
+            "activity": "Dinner at a local restaurant",
+            "duration": "2 hours",
+            "travel_time": "0.5 hours",
+            "booking_link": null,
+            "cost_estimate": "800"
+          },
+          {
+            "period": "Night",
+            "activity": "Visit a nightclub or bar",
+            "duration": "3 hours",
+            "travel_time": "0.5 hours",
+            "booking_link": null,
+            "cost_estimate": "1000"
+          }
+        ],
+        "cost_estimate": "1800",
+        "notes": [
+          "Please drink responsibly and plan for transportation in advance"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Return to Delhi",
+        "summary": "Check-out of hotel and return to Delhi",
+        "schedule": [
+          {
+            "period": "Morning",
+            "activity": "Check-out of hotel",
+            "duration": "1 hour",
+            "travel_time": "0 hours",
+            "booking_link": null,
+            "cost_estimate": "0"
+          },
+          {
+            "period": "Afternoon",
+            "activity": "Flight from Goa to Delhi",
+            "duration": "2.5 hours",
+            "travel_time": "0 hours",
+            "booking_link": "https://example.com/flight-booking",
+            "cost_estimate": "5000"
+          }
+        ],
+        "cost_estimate": "5000",
+        "notes": [
+          "Please check-out of hotel on time and reach airport 2 hours before flight"
+        ]
+      }
+    ],
+    "weather": {
+      "summary": "25.3°C, Clouds, 53% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 25.3,
+          "temp_min": 20,
+          "temp_max": 33.8,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 25,
+          "temp_min": 19.4,
+          "temp_max": 33.6,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 24,
+          "temp_min": 19.6,
+          "temp_max": 31.4,
+          "icon": "Clouds",
+          "humidity": 54
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 25.6,
+          "temp_min": 18.6,
+          "temp_max": 32.5,
+          "icon": "Clouds",
+          "humidity": 42
+        },
+        {
+          "date": "2025-11-30",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 18:10:00",
+        "price": "67.47 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 07:10:00",
+        "price": "84.27 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 21:50:00",
+        "price": "105.97 EUR",
+        "duration": "22H"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Goa",
+        "area": "Premium Zone",
+        "rating": "4.9★",
+        "price_per_night": "₹8725",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Goa",
+        "area": "City Center",
+        "rating": "4.5★",
+        "price_per_night": "₹4062",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Comfort Stay Goa",
+        "area": "Downtown",
+        "rating": "4.4★",
+        "price_per_night": "₹2589",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Goa",
+        "area": "Near Station",
+        "rating": "4.1★",
+        "price_per_night": "₹758",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Goa",
+        "area": "Tourist District",
+        "rating": "3.8★",
+        "price_per_night": "₹1736",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "bdecc4bf-0a26-4e1d-b774-31882c3c422d"
+  },
+  {
+    "id": 1763994780986,
+    "title": "Plan a 4-day beach trip to Goa starti...",
+    "createdAt": 1763994780986,
+    "prompt": "Plan a 4-day beach trip to Goa starting from Delhi with good food and nightlife",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-30",
+    "itinerary": "",
+    "itinerary_text": "",
+    "itineraryRich": [],
+    "weather": {
+      "summary": "25.3°C, Clouds, 53% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 25.3,
+          "temp_min": 20,
+          "temp_max": 33.8,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 25,
+          "temp_min": 19.4,
+          "temp_max": 33.6,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 24,
+          "temp_min": 19.6,
+          "temp_max": 31.4,
+          "icon": "Clouds",
+          "humidity": 54
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 25.6,
+          "temp_min": 18.6,
+          "temp_max": 32.5,
+          "icon": "Clouds",
+          "humidity": 42
+        },
+        {
+          "date": "2025-11-30",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": [
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 18:10:00",
+        "price": "67.47 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 07:10:00",
+        "price": "84.27 EUR",
+        "duration": "2H35M"
+      },
+      {
+        "airline": "Airline AI",
+        "from": "DEL",
+        "to": "GOI",
+        "depart": "2025-11-26 21:50:00",
+        "price": "105.97 EUR",
+        "duration": "22H"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Luxury Palace Goa",
+        "area": "Premium Zone",
+        "rating": "4.7★",
+        "price_per_night": "₹7792",
+        "description": "A Premium Zone hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "The Grand Goa",
+        "area": "City Center",
+        "rating": "4.4★",
+        "price_per_night": "₹4182",
+        "description": "A City Center hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Expensive"
+        ]
+      },
+      {
+        "name": "Backpacker Hostel Goa",
+        "area": "Near Station",
+        "rating": "4.2★",
+        "price_per_night": "₹732",
+        "description": "A Near Station hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Comfort Stay Goa",
+        "area": "Downtown",
+        "rating": "4.1★",
+        "price_per_night": "₹2982",
+        "description": "A Downtown hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      },
+      {
+        "name": "Budget Inn Goa",
+        "area": "Tourist District",
+        "rating": "3.7★",
+        "price_per_night": "₹1654",
+        "description": "A Tourist District hotel with great amenities.",
+        "pros": [
+          "Central location",
+          "Free WiFi"
+        ],
+        "cons": [
+          "Small rooms"
+        ]
+      }
+    ],
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "4f87c9dd-eb9f-4061-bba4-b39888d5b0d0"
+  },
+  {
+    "id": 1763994629363,
+    "title": "Plan a 4-day beach trip to Goa starti...",
+    "createdAt": 1763994629363,
+    "prompt": "Plan a 4-day beach trip to Goa starting from Delhi with good food and nightlife",
+    "origin": "Delhi",
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-30",
+    "itinerary": "",
+    "itinerary_text": "",
+    "itineraryRich": [],
+    "weather": {
+      "summary": "25.3°C, Clouds, 53% humidity",
+      "days": [
+        {
+          "date": "2025-11-26",
+          "temp": 25.3,
+          "temp_min": 20,
+          "temp_max": 33.8,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-27",
+          "temp": 25,
+          "temp_min": 19.4,
+          "temp_max": 33.6,
+          "icon": "Clouds",
+          "humidity": 53
+        },
+        {
+          "date": "2025-11-28",
+          "temp": 24,
+          "temp_min": 19.6,
+          "temp_max": 31.4,
+          "icon": "Clouds",
+          "humidity": 54
+        },
+        {
+          "date": "2025-11-29",
+          "temp": 25.6,
+          "temp_min": 18.6,
+          "temp_max": 32.5,
+          "icon": "Clouds",
+          "humidity": 42
+        },
+        {
+          "date": "2025-11-30",
+          "temp_min": null,
+          "temp_max": null,
+          "temp": null,
+          "icon": "Unknown",
+          "humidity": null
+        }
+      ],
+      "live": true
+    },
+    "flights": {
+      "live": true,
+      "options": [
+        {
+          "airline": "Airline AI",
+          "from": "DEL",
+          "to": "GOI",
+          "depart": "2025-11-26 18:10:00",
+          "price": "67.47 EUR",
+          "duration": "2H35M"
+        },
+        {
+          "airline": "Airline AI",
+          "from": "DEL",
+          "to": "GOI",
+          "depart": "2025-11-26 07:10:00",
+          "price": "84.27 EUR",
+          "duration": "2H35M"
+        },
+        {
+          "airline": "Airline AI",
+          "from": "DEL",
+          "to": "GOI",
+          "depart": "2025-11-26 21:50:00",
+          "price": "105.97 EUR",
+          "duration": "22H"
+        }
+      ]
+    },
+    "hotels": {
+      "live": false,
+      "options": [
+        {
+          "name": "Luxury Palace Goa",
+          "area": "Premium Zone",
+          "rating": "4.9★",
+          "price_per_night": "₹6218",
+          "description": "A Premium Zone hotel with great amenities.",
+          "pros": [
+            "Central location",
+            "Free WiFi"
+          ],
+          "cons": [
+            "Expensive"
+          ]
+        },
+        {
+          "name": "The Grand Goa",
+          "area": "City Center",
+          "rating": "4.3★",
+          "price_per_night": "₹3666",
+          "description": "A City Center hotel with great amenities.",
+          "pros": [
+            "Central location",
+            "Free WiFi"
+          ],
+          "cons": [
+            "Expensive"
+          ]
+        },
+        {
+          "name": "Backpacker Hostel Goa",
+          "area": "Near Station",
+          "rating": "4.1★",
+          "price_per_night": "₹592",
+          "description": "A Near Station hotel with great amenities.",
+          "pros": [
+            "Central location",
+            "Free WiFi"
+          ],
+          "cons": [
+            "Small rooms"
+          ]
+        },
+        {
+          "name": "Budget Inn Goa",
+          "area": "Tourist District",
+          "rating": "4.0★",
+          "price_per_night": "₹2105",
+          "description": "A Tourist District hotel with great amenities.",
+          "pros": [
+            "Central location",
+            "Free WiFi"
+          ],
+          "cons": [
+            "Small rooms"
+          ]
+        },
+        {
+          "name": "Comfort Stay Goa",
+          "area": "Downtown",
+          "rating": "4.0★",
+          "price_per_night": "₹2722",
+          "description": "A Downtown hotel with great amenities.",
+          "pros": [
+            "Central location",
+            "Free WiFi"
+          ],
+          "cons": [
+            "Small rooms"
+          ]
+        }
+      ],
+      "fallback_reason": "API Error/Not Implemented"
+    },
+    "refinements": [
+      {
+        "role": "assistant",
+        "content": "Your itinerary is ready! Ask for tweaks below to refine specific days."
+      }
+    ],
+    "itinerary_id": "260425e6-7ef0-4832-9dc3-1fe51e65e6fb"
+  },
+  {
     "id": 1763981095533,
     "title": "Plan a 4-day budget backpacking trip ...",
     "createdAt": 1763981095533,

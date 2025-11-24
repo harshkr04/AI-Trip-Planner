@@ -100,6 +100,11 @@ export default function HomePage({
     setLoading(true);
     try {
       const data = await createItinerary({ prompt, start_date: start, end_date: end, origin });
+      console.log("=== API Response Data ===");
+      console.log("Full response:", data);
+      console.log("itinerary object:", data.itinerary);
+      console.log("itinerary.days:", data.itinerary?.days);
+      console.log("itinerary.days length:", data.itinerary?.days?.length);
       setItineraryText(data.itinerary_text || "");
       setItineraryRich(data.itinerary || null);
       setItineraryId(data.itinerary_id || null);

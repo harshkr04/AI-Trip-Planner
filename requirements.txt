@@ -17,3 +17,5 @@ passlib
 bcrypt
 python-jose[cryptography]
 email-validator
+langchain-groq
+langchain-core

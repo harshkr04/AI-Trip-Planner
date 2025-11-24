@@ -8,6 +8,8 @@ export async function createItinerary({ prompt, start_date, end_date, origin }) 
     start_date,
     end_date,
     origin,
+  }, {
+    timeout: 120000 // 2 minutes timeout for AI generation
   });
   return res.data;
 }

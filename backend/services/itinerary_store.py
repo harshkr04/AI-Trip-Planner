@@ -25,17 +25,24 @@ def _save(data: Dict[str, Any]) -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-def _ensure_day_fields(itinerary: Dict[str, Any]) -> Dict[str, Any]:
-    for day in itinerary.get("days", []):
+def _ensure_day_fields(itinerary_days: list) -> list:
+    """
+    Ensure each day in the itinerary list has the required fields.
+    itinerary_days is now a list of day objects, not a dict with a 'days' key.
+    """
+    for day in itinerary_days:
         day.setdefault("personal_note", "")
         day.setdefault("notes", [])
-    return itinerary
+    return itinerary_days
 
 
 def create_record(plan_result: Dict[str, Any], metadata: Dict[str, Any] | None = None) -> Dict[str, Any]:
     store = _load()
     itinerary_id = str(uuid.uuid4())
-    itinerary_data = _ensure_day_fields(deepcopy(plan_result["itinerary"]))
+    
+    # plan_result["itinerary"] is now a list of days, not a dict with a "days" key
+    itinerary_data = _ensure_day_fields(deepcopy(plan_result.get("itinerary", [])))
+    
     record = {
         "id": itinerary_id,
         "itinerary": itinerary_data,

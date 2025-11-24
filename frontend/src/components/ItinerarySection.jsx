@@ -27,16 +27,88 @@ export default function ItinerarySection({
   const [noteDraft, setNoteDraft] = useState("");
   const [expandedDays, setExpandedDays] = useState({});
 
-  const days = itinerary?.days || [];
+  // Helper to parse raw text into structured days if structured data is missing
+  const parseItineraryText = (text) => {
+    if (!text) return [];
+    const days = [];
+    const lines = text.split('\n');
+    let currentDay = null;
+    let currentPeriod = null;
+
+    // Regex to match "Day 1", "Day 1:", "Day 1 -", etc.
+    const dayRegex = /^Day\s+(\d+)(?::|-)?\s*(.*)/i;
+
+    lines.forEach(line => {
+      const trimmed = line.trim();
+      if (!trimmed) return;
+
+      const dayMatch = trimmed.match(dayRegex);
+      if (dayMatch) {
+        if (currentDay) days.push(currentDay);
+        currentDay = {
+          day: dayMatch[1],
+          headline: dayMatch[2] || `Day ${dayMatch[1]}`,
+          segments: [],
+          highlights: ""
+        };
+        currentPeriod = null;
+      } else if (currentDay) {
+        const lower = trimmed.toLowerCase();
+
+        if (lower.includes("morning:")) {
+          currentPeriod = "Morning";
+          const content = trimmed.replace(/morning:/i, "").trim();
+          if (content) currentDay.segments.push({ period: "Morning", activity: content });
+        } else if (lower.includes("afternoon:")) {
+          currentPeriod = "Afternoon";
+          const content = trimmed.replace(/afternoon:/i, "").trim();
+          if (content) currentDay.segments.push({ period: "Afternoon", activity: content });
+        } else if (lower.includes("evening:")) {
+          currentPeriod = "Evening";
+          const content = trimmed.replace(/evening:/i, "").trim();
+          if (content) currentDay.segments.push({ period: "Evening", activity: content });
+        } else if (lower.includes("important notes:") || lower.includes("highlights:")) {
+          currentDay.highlights = trimmed.replace(/(important notes:|highlights:)/i, "").trim();
+          currentPeriod = null; // Reset period so subsequent lines don't get added to last period
+        } else {
+          // Append to current period or highlights
+          if (currentPeriod) {
+            const segs = currentDay.segments.filter(s => s.period === currentPeriod);
+            if (segs.length > 0) {
+              // If it looks like a new list item (bullet), add newline, else space
+              const separator = (trimmed.startsWith("-") || trimmed.startsWith("•")) ? "\n" : " ";
+              segs[segs.length - 1].activity += separator + trimmed;
+            } else {
+              // Period started but no content yet (e.g. "Morning:" was on prev line)
+              currentDay.segments.push({ period: currentPeriod, activity: trimmed });
+            }
+          } else if (currentDay.highlights) {
+            currentDay.highlights += "\n" + trimmed;
+          } else if (!currentDay.headline && !currentPeriod) {
+            // Maybe part of the headline if it was multiline?
+            // Or just intro text for the day
+          }
+        }
+      }
+    });
+    if (currentDay) days.push(currentDay);
+    return days;
+  };
+
+  const days = useMemo(() => {
+    if (itinerary?.days && itinerary.days.length > 0) return itinerary.days;
+    return parseItineraryText(itineraryText);
+  }, [itinerary, itineraryText]);
 
   const summaryCards = useMemo(() => {
-    if (!itinerary) return [];
+    // Use the derived 'days' for length calculation
+    const dest = itinerary?.destination || (itineraryText ? "Your Trip" : "—");
     return [
-      { label: "Destination", value: itinerary.destination || "—", icon: "📍" },
+      { label: "Destination", value: dest, icon: "📍" },
       { label: "Duration", value: `${days.length || 0} days`, icon: "🗓️" },
-      { label: "Theme", value: itinerary.summary || "Balanced", icon: "✨" },
+      { label: "Theme", value: itinerary?.summary || "Balanced", icon: "✨" },
     ];
-  }, [itinerary, days.length]);
+  }, [itinerary, days.length, itineraryText]);
 
   const hasContent = Boolean(itinerary || itineraryText);
   if (!hasContent) return null;
@@ -109,13 +181,18 @@ export default function ItinerarySection({
       <article key={day.day || idx} className="day-card-new">
         <header className="day-header-new">
           <div className="day-title-group">
-            <span className="day-number">Day {day.day}</span>
+            <span className="day-number">🗓️ Day {day.day}</span>
             <h4 className="day-headline">{day.headline || day.date}</h4>
           </div>
           <span className="day-date-muted">{day.date}</span>
         </header>
 
-        {day.highlights && <p className="day-highlights-text">{day.highlights}</p>}
+        {day.highlights && (
+          <div className="day-highlights-wrapper">
+            <h5 className="highlights-label">💡 Important Notes</h5>
+            <p className="day-highlights-text">{day.highlights}</p>
+          </div>
+        )}
 
         <div className="day-periods-grid">
           {["Morning", "Afternoon", "Evening"].map((period) => (
@@ -184,18 +261,8 @@ export default function ItinerarySection({
     <section className="itinerary-layout">
       {/* Main Content Column */}
       <div className="itinerary-main">
+        {/* Header Actions */}
         <div className="itinerary-header-row">
-          <div className="header-summary-cards">
-            {summaryCards.map((card) => (
-              <div key={card.label} className="header-card">
-                <span className="header-icon">{card.icon}</span>
-                <div>
-                  <span className="header-label">{card.label}</span>
-                  <strong className="header-value">{card.value}</strong>
-                </div>
-              </div>
-            ))}
-          </div>
           <div className="header-actions">
             <button className="btn-action-subtle" onClick={handleShareLink}>🔗 Share</button>
             <button className="btn-action-subtle" onClick={onDownloadPdf}>📥 PDF</button>
