@@ -38,6 +38,7 @@ def get_weather_for_trip(trip: dict):
     """
     Calls OpenWeather 5-day / 3-hour forecast and aggregates into per-day summary.
     Expects trip to contain 'destination', and optionally 'start_date' and 'end_date'.
+    Returns dict with 'live': bool, 'summary': str, 'days': list, 'placeholder_reason': str (optional).
     """
     destination = trip.get("destination", "Delhi")
     api_key = config.WEATHER_API_KEY
@@ -46,7 +47,7 @@ def get_weather_for_trip(trip: dict):
         start = trip.get("start_date")
         end = trip.get("end_date")
         if not start or not end:
-            return {"summary": "Weather unavailable (no API key)", "days": []}
+            return {"summary": "Weather unavailable (no API key)", "days": [], "live": False, "placeholder_reason": "No API key configured"}
         start_dt = datetime.fromisoformat(start)
         end_dt = datetime.fromisoformat(end)
         days = []
@@ -60,7 +61,7 @@ def get_weather_for_trip(trip: dict):
                 "icon": "Unavailable",
                 "humidity": None
             })
-        return {"summary": "Weather API key not configured", "days": days}
+        return {"summary": "Weather API key not configured", "days": days, "live": False, "placeholder_reason": "No API key configured"}
 
     base_url = "https://api.openweathermap.org/data/2.5/forecast"
     params = {
@@ -70,9 +71,12 @@ def get_weather_for_trip(trip: dict):
     }
     try:
         r = requests.get(base_url, params=params, timeout=8)
+        if r.status_code != 200:
+             return {"summary": "Weather unavailable", "days": [], "live": False, "placeholder_reason": f"API Error: {r.status_code}"}
+        
         data = r.json()
         if "list" not in data:
-            return {"summary": "Weather unavailable", "days": []}
+            return {"summary": "Weather unavailable", "days": [], "live": False, "placeholder_reason": "Invalid API response"}
 
         # aggregate by date
         by_date = defaultdict(list)
@@ -119,8 +123,9 @@ def get_weather_for_trip(trip: dict):
         else:
             summary = "Weather retrieved (summary unavailable)"
 
-        return {"summary": summary, "days": days}
+        return {"summary": summary, "days": days, "live": True}
 
     except Exception as e:
         # safe fallback
-        return {"summary": "Weather unavailable", "days": []}
+        return {"summary": "Weather unavailable", "days": [], "live": False, "placeholder_reason": str(e)}
+

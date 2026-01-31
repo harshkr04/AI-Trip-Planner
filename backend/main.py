@@ -25,11 +25,36 @@ except Exception:
 
 app = FastAPI(title=getattr(config, "APP_NAME", "AI Trip Planner"))
 
+# Startup event to check DB persistence
+from .database import SessionLocal
+from .models import User
+
+@app.on_event("startup")
+def startup_db_check():
+    db = SessionLocal()
+    try:
+        count = db.query(User).count()
+        print(f"----------------------------------------------------------------")
+        print(f"[STARTUP] Database persistence check: Found {count} users in DB.")
+        print(f"----------------------------------------------------------------")
+    except Exception as e:
+        print(f"[STARTUP] Error checking DB: {e}")
+    finally:
+        db.close()
+
 # Configure CORS
 frontend_origin = getattr(config, "FRONTEND_ORIGIN", "http://localhost:3000")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[frontend_origin],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:3002",
+        "http://localhost:3003",
+        "http://localhost:3005",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:3001"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -63,10 +88,108 @@ routers_to_try = [
     ("backend.routes.flights", "/api/flights", "flights"),
     ("backend.routes.hotels", "/api/hotels", "hotels"),
     ("backend.routes.sessions", "/api/sessions", "sessions"),
+    ("backend.routes.history", "/api/history", "history"),
+    ("backend.routes.location", "/api/location", "location"),
+    ("backend.routes.auth", "/api/auth", "auth"),
 ]
 
 for mod_name, prefix, tag in routers_to_try:
     try_include_router(mod_name, prefix, tag)
+
+# ============================================================================
+# EMERGENCY AUTH FIX - Direct endpoints to make auth work immediately
+# ============================================================================
+from fastapi import HTTPException, Depends
+from sqlalchemy.orm import Session
+from pydantic import BaseModel, EmailStr
+from passlib.context import CryptContext
+from .database import get_db
+from datetime import datetime, timedelta
+from jose import jwt
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+class RegisterRequest(BaseModel):
+    email: EmailStr
+    password: str
+    name: str
+
+class LoginRequest(BaseModel):
+    email: EmailStr
+    password: str
+
+def create_access_token(data: dict):
+    to_encode = data.copy()
+    expire = datetime.utcnow() + timedelta(minutes=60)
+    to_encode.update({"exp": expire})
+    return jwt.encode(to_encode, config.JWT_SECRET, algorithm=config.JWT_ALGORITHM)
+
+@app.post("/api/auth/register", status_code=201)
+def emergency_register(payload: RegisterRequest, db: Session = Depends(get_db)):
+    try:
+        existing = db.query(User).filter(User.email == payload.email).first()
+        if existing:
+            raise HTTPException(status_code=409, detail="Email already registered")
+        
+        hashed_pw = pwd_context.hash(payload.password)
+        new_user = User(
+            email=payload.email,
+            name=payload.name,
+            hashed_password=hashed_pw,
+            picture=""
+        )
+        db.add(new_user)
+        db.commit()
+        db.refresh(new_user)
+        
+        print(f"[AUTH] Registration successful: {new_user.email}")
+        
+        token = create_access_token({"sub": new_user.email, "id": new_user.id})
+        return {
+            "user": {
+                "id": new_user.id,
+                "email": new_user.email,
+                "name": new_user.name,
+                "picture": new_user.picture
+            },
+            "token": token
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"[AUTH] Registration error: {e}")
+        db.rollback()
+        raise HTTPException(status_code=500, detail="Failed to create account")
+
+@app.post("/api/auth/login")
+def emergency_login(payload: LoginRequest, db: Session = Depends(get_db)):
+    try:
+        user = db.query(User).filter(User.email == payload.email).first()
+        if not user or not user.hashed_password:
+            raise HTTPException(status_code=401, detail="Invalid email or password")
+        
+        if not pwd_context.verify(payload.password, user.hashed_password):
+            raise HTTPException(status_code=401, detail="Invalid email or password")
+        
+        print(f"[AUTH] Login successful: {user.email}")
+        
+        token = create_access_token({"sub": user.email, "id": user.id})
+        return {
+            "user": {
+                "id": user.id,
+                "email": user.email,
+                "name": user.name,
+                "picture": user.picture
+            },
+            "token": token
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"[AUTH] Login error: {e}")
+        raise HTTPException(status_code=500, detail="Login failed")
+
+# ============================================================================
 
 @app.get("/")
 def read_root():

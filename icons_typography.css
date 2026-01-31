@@ -1,0 +1,85 @@
+/* ============================================
+   ITINERARY ENHANCEMENTS - ICONS & TYPOGRAPHY
+   ============================================ */
+
+/* 1. Day Header & Number */
+.day-number {
+    font-size: 18px !important;
+    /* Force larger size */
+    font-weight: 800 !important;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.day-headline {
+    font-size: 28px !important;
+    /* Larger headline */
+    font-weight: 700 !important;
+    color: #1a1a1a;
+    /* Darker for contrast */
+    margin-top: 4px;
+}
+
+/* 2. Highlights / Important Notes */
+.day-highlights-wrapper {
+    background: rgba(255, 248, 225, 0.6);
+    /* Subtle yellow tint */
+    border-left: 4px solid #ffb300;
+    /* Amber accent */
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+    margin-top: 16px;
+}
+
+.highlights-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #b36b00;
+    /* Darker amber */
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.day-highlights-text {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text);
+    box-shadow: none !important;
+}
+
+/* 3. Period Titles */
+.period-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+    color: var(--text);
+}
+
+/* 4. Spacing & Dividers */
+.day-card-new {
+    padding-bottom: 48px !important;
+    /* More space at bottom of day */
+    border-bottom: 1px solid #e2e8f0 !important;
+    /* Clear divider */
+    margin-bottom: 48px !important;
+    /* Space between days */
+}
+
+.day-card-new:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.day-header-new {
+    margin-bottom: 24px !important;
+}

@@ -30,8 +30,23 @@ def save_sessions(arr):
 def list_sessions():
     return load_sessions()
 
+@router.post("/")
+def save_session(session: dict):
+    """Save or update a session."""
+    sessions = load_sessions()
+    session_id = str(session.get("id", ""))
+    # Remove existing if present
+    sessions = [s for s in sessions if str(s.get("id")) != session_id]
+    # Add new one at the front
+    sessions.insert(0, session)
+    # Keep only last 50
+    sessions = sessions[:50]
+    save_sessions(sessions)
+    return JSONResponse({"status": "ok", "saved": session_id})
+
 @router.delete("/{session_id}")
 def delete_session(session_id: str):
+    """Delete a session by ID. Also available at /api/history/{id}."""
     sessions = load_sessions()
     new = [s for s in sessions if str(s.get("id")) != str(session_id)]
     if len(new) == len(sessions):

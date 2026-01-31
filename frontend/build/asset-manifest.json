@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AI-Trip-Planner/static/css/main.2e8e95ff.css",
+    "main.js": "/AI-Trip-Planner/static/js/main.9b56038b.js",
+    "index.html": "/AI-Trip-Planner/index.html",
+    "main.2e8e95ff.css.map": "/AI-Trip-Planner/static/css/main.2e8e95ff.css.map",
+    "main.9b56038b.js.map": "/AI-Trip-Planner/static/js/main.9b56038b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e8e95ff.css",
+    "static/js/main.9b56038b.js"
+  ]
+}

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { searchHotels } from "../api/hotels";
 import Section from "../components/Section";
+import DatePickerField from "../components/DatePickerField";
 
 export default function HotelSearch() {
   const [destination, setDestination] = useState("Manali");
@@ -14,6 +15,13 @@ export default function HotelSearch() {
   const handleSearch = async () => {
     if (!destination || !start || !end) {
       setError("Please fill destination and date range.");
+      return;
+    }
+    // Validate dates
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    if (endDate <= startDate) {
+      setError("Check-out date must be after check-in date.");
       return;
     }
     setError("");
@@ -36,8 +44,8 @@ export default function HotelSearch() {
 
       <div style={{ display: "flex", gap: 12, marginTop: 12, marginBottom: 18 }}>
         <input className="input" placeholder="Destination" value={destination} onChange={e => setDestination(e.target.value)} style={{ width: 160 }} />
-        <input className="input input-date" type="date" value={start} onChange={e => setStart(e.target.value)} style={{ width: 160 }} />
-        <input className="input input-date" type="date" value={end} onChange={e => setEnd(e.target.value)} style={{ width: 160 }} />
+        <DatePickerField value={start} onChange={setStart} placeholder="Check-in" />
+        <DatePickerField value={end} onChange={setEnd} placeholder="Check-out" />
         <button className="btn-send" onClick={handleSearch} disabled={loading} style={{ minWidth: 140 }}>
           {loading ? "Searching..." : "Search Hotels"}
         </button>
@@ -45,7 +53,15 @@ export default function HotelSearch() {
 
       <Section title="Results" defaultOpen={true}>
         {error && <div className="empty">{error}</div>}
-        {hotels.length === 0 ? <div className="empty">No hotels to show.</div> : (
+        {loading && hotels.length === 0 ? (
+          <div className="skeleton-list">
+            {[1, 2, 3].map(i => (
+              <div key={i} className="skeleton-row" />
+            ))}
+          </div>
+        ) : hotels.length === 0 ? (
+          <div className="empty">No hotels to show.</div>
+        ) : (
           <div className="list">
             {hotels.map((h, idx) => (
               <div key={idx} className="list-row">
